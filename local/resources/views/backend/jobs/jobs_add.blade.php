@@ -62,6 +62,21 @@
                                 <textarea name="jobs_qualifications_en" id="jobs_qualifications_en" rows="10" cols="80">{{ (!empty($jobs_list) ? $jobs_list->jobs_qualifications_en  : '') }}</textarea>
                             </div>
                         </div>
+                        <div class="form-group row">
+                            <label class="col-sm-2 col-form-label text-right">วันที่</label>
+                            <div class="col-sm-4">
+                                <input type="date" name="jobs_date" class="form-control" placeholder="วันที่" value="{{ (!empty($jobs_list) ? $jobs_list->jobs_date : '') }}">
+                            </div>
+                        </div>
+                        <div class="form-group row">
+                            <label class="col-sm-2 col-form-label text-right">ประเภทสมาชิก</label>
+                            <div class="col-sm-4">
+                                <select class="form-control" name="jobs_type">
+                                <option {{ (!empty($jobs_list) && $jobs_list->jobs_type == '1' ? 'SELECTED' : '' ) }} value="1">บุคคลทั่วไป</option>
+                                <option {{ (!empty($jobs_list) && $jobs_list->jobs_type == '2' ? 'SELECTED' : '' ) }} value="2" >สมาชิก</option>
+                                </select>
+                            </div>
+                        </div>
                         
                     </div>
                         

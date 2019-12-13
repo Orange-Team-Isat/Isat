@@ -237,7 +237,7 @@
                     ?>
 
                     @if(!empty($gallery))
-                            @foreach($gallery as $_gallery)   
+                    @foreach($gallery as $_gallery)   
                             <?php if(!empty($_gallery->gallery_date)){
                              $date = explode('-',$_gallery->gallery_date);
                              if(Session::get('lang') == 'th' ){
@@ -245,7 +245,7 @@
                              }else{
                                  $year = $date[0];
                              }
-                             $date_text = $date[2].' '.(Session::get('lang') == 'th' ? $month_th[$date[1]] : $month_en[$date[1]] ).' '.$year;
+                                $date_text = $date[2].' '.(Session::get('lang') == 'th' ? $month_th[$date[1]] : $month_en[$date[1]] ).' '.$year;
                              
                             }  ?> 
                     <div class="col-lg-4 col-md-4 col-12">

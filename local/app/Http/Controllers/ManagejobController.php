@@ -64,8 +64,10 @@ class ManagejobController extends Controller
             'jobs_detail_en'               => $request->input('jobs_detail_en'),
             'jobs_qualifications_th'       => $request->input('jobs_qualifications_th'),
             'jobs_qualifications_en'       => $request->input('jobs_qualifications_en'),
-            'jobs_create'               => date('Y-m-d H-i-s'),
-            'jobs_update'               => date('Y-m-d H-i-s')
+            'jobs_type'                    => $request->input('jobs_type'),
+            'jobs_date'                    => $request->input('jobs_date'),
+            'jobs_create'                  => date('Y-m-d H-i-s'),
+            'jobs_update'                  => date('Y-m-d H-i-s')
         );           
 
         DB::table('jobs')->insert($values);
@@ -85,7 +87,9 @@ class ManagejobController extends Controller
             'jobs_detail_en'               => $request->input('jobs_detail_en'),
             'jobs_qualifications_th'       => $request->input('jobs_qualifications_th'),
             'jobs_qualifications_en'       => $request->input('jobs_qualifications_en'),
-            'jobs_update'               => date('Y-m-d H-i-s')
+            'jobs_type'                    => $request->input('jobs_type'),
+            'jobs_date'                    => $request->input('jobs_date'),
+            'jobs_update'                  => date('Y-m-d H-i-s')
         );           
 
         DB::table('jobs')->where('jobs_id',$request->input('jobs_id'))->update($values);
