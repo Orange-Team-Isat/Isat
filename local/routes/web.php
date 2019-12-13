@@ -50,8 +50,9 @@ Route::get('/news-detail', function () {
 Route::get('/job', function () {
     return view('front.job');
 });
-Route::get('/job-detail', function () {
-    return view('front.job-detail');
+Route::get('/job-detail/{id}', function ($id) {
+    $data['jobs_id'] = $id;
+    return view('front.job-detail',$data);
 });
 
 

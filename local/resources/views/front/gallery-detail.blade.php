@@ -15,8 +15,6 @@
                 </div>
             </div>
             <?php 
-              
-
                $gallery= DB::table('gallery')->where('gallery_id',$gallery_id)->first(); 
                $image= DB::table('image')->where('image_ref',$gallery->gallery_ref)->get(); 
                

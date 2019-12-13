@@ -79,7 +79,7 @@
                                 </div>
                                 
                                 <div class="col-lg-2 col-md-3 col-12">
-                                    <a class="buttonYellow" href="{{ url('job-detail')}}">Read more</a>
+                                    <a class="buttonYellow" href="{{ url('job-detail')}}/{{$_jobs->jobs_id}}">Read more</a>
                                 </div>
                             
                             @endforeach
@@ -190,9 +190,8 @@
                                 </div>
                                 
                                     <div class="col-lg-2 col-md-3 col-12">
-                                    <a class="buttonYellow" href="{{ url('job-detail')}}">Read more</a>
+                                    <a class="buttonYellow" href="{{ url('job-detail')}}/{{ $_jobs->jobs_id }}">Read more</a>
                                 </div>
-                            
                             @endforeach
                             @endif
                             </div>
