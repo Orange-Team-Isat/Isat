@@ -96,8 +96,7 @@ Route::get('manageslide/create','ManageslideController@create');
 Route::post('manageslide/store_slide','ManageslideController@store_slide');
 Route::get('manageslide/show/{id}','ManageslideController@show');
 Route::post('manageslide/update_slide','ManageslideController@update_slide');
-
-Route::post('change_sortbanner','ManageslideController@change_sortbanner');
+Route::get('change_sortbanner','ManageslideController@change_sortbanner');
 
 Route::get('managenews_sub/{name}','ManagenewsController@index');
 Route::get('show_news','ManagenewsController@show_user');

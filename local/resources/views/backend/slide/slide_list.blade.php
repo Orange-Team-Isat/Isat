@@ -58,6 +58,7 @@
                         </thead>
                         <tbody class="tbody_txt_center">
                         <?php $i = 1; ?>
+                        {{ csrf_field() }}
                             @foreach ($slide as $item => $value)
                                 <tr>
                                     <td>{{ $i }}</td>
@@ -107,14 +108,15 @@
 			e.preventDefault();
 		});
 
-        $('.change_sort').keypress(function(){
+        $('.change_sort').change(function(){
             var id = $(this).attr('ref');
             var sort = $(this).val();
-            var _token = '{{ csrf_field() }}';
+            // var _token = $('input[name=_token]').val();
+            console.log(id,sort);
             $.ajax({
                 url: "{{ url('change_sortbanner') }}",
-                method : 'POST',
-                data : { 'banner_id' : id ,'banner_sort':sort , '_token' : _token  },
+                method : 'GET',
+                data : { 'banner_id' : id ,'banner_sort' : sort  },
                 dataType : 'html', 
                 success:function(result){
                 }
