@@ -30,8 +30,9 @@ Route::get('/contact', function () {
 });
 
 
-Route::get('/gallery-detail', function () {
-    return view('front.gallery-detail');
+Route::get('/gallery-detail/{id}', function ($id) {
+    $data['gallery_id'] = $id;
+    return view('front.gallery-detail',$data);
 });
 Route::get('/gallery', function () {
     return view('front.gallery');

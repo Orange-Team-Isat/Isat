@@ -14,20 +14,62 @@
                     <h2>Photo Gallery</h2>
                 </div>
             </div>
+            <?php 
+              
+
+               $gallery= DB::table('gallery')->where('gallery_id',$gallery_id)->first(); 
+               $image= DB::table('image')->where('image_ref',$gallery->gallery_ref)->get(); 
+               
+                    $month_th['01'] = 'ม.ค.';
+                    $month_th['02'] = 'ก.พ.';
+                    $month_th['03'] = 'มี.ค.';
+                    $month_th['04'] = 'เม.ย.';
+                    $month_th['05'] = 'พ.ค.';
+                    $month_th['06'] = 'มิ.ย.';
+                    $month_th['07'] = 'ก.ค.';
+                    $month_th['08'] = 'ส.ค.';
+                    $month_th['09'] = 'ก.ย';
+                    $month_th['10'] = 'ต.ค.';
+                    $month_th['11'] = 'พ.ย.';
+                    $month_th['12'] = 'ธ.ค.';
+                    $month_en['01'] = 'JAN';
+                    $month_en['02'] = 'FEB';
+                    $month_en['03'] = 'MAR';
+                    $month_en['04'] = 'APR';
+                    $month_en['05'] = 'MAY';
+                    $month_en['06'] = 'JUN';
+                    $month_en['07'] = 'JUL';
+                    $month_en['08'] = 'AUG';
+                    $month_en['09'] = 'SEP';
+                    $month_en['10'] = 'OCT';
+                    $month_en['11'] = 'NOV';
+                    $month_en['12'] = 'DEC';
+                   
+                    if(!empty($gallery->gallery_date)){
+                        $date = explode('-',$gallery->gallery_date);
+                        if(Session::get('lang') == 'th' ){
+                            $year = $date[0]+543;
+                        }else{
+                            $year = $date[0];
+                        }
+                        $date_text = $date[2].' '.(Session::get('lang') == 'th' ? $month_th[$date[1]] : $month_en[$date[1]] ).' '.$year;
+                        
+                       }
+               ?>
             
             <div class="row">
                 <div class="col">
                     <div class="GrayBox-info">
                         <div class="row">
                             <div class="col">
-                                <h3 class="subTopic">Photo Gallery Topic Photo Gallery Topic Photo Gallery Topic</h3>
-                                <div class="dateBox-cc">22 OCT 2019</div>
+                                <h3 class="subTopic">{{ (Session::get('lang') == 'th' ? $gallery->gallery_title_th : $gallery->gallery_title_en) }}</h3>
+                                <div class="dateBox-cc">{{$date_text}}</div>
                             </div>
                         </div>
                         <div class="row">
                             <div class="col mt-4">
                                 <div class="text-center">
-                                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+                                    <p><?php echo (Session::get('lang') == 'th' ? $gallery->gallery_detail_th : $gallery->gallery_detail_en); ?></p>
                                 </div>
                             </div>
                         </div> 
@@ -40,7 +82,13 @@
                     <div class="gallery-slide">
                         <div class="flexslider" id="slider">
                             <ul class="slides">
-                                <li><img src="{{asset('assets/images/gallery/gallery01.jpg')}}"></li>
+                            @if(!empty($image))
+                                @foreach($image as $_image)
+                                <li><img src="{{asset('local/public/gallery').'/'.$_image->image_file}}"></li>
+
+                                @endforeach
+                            @endif
+                                <!-- <li><img src="{{asset('assets/images/gallery/gallery01.jpg')}}"></li>
                                 <li><img src="{{asset('assets/images/gallery/gallery02.jpg')}}"></li>
                                 <li><img src="{{asset('assets/images/gallery/gallery03.jpg')}}"></li>
                                 <li><img src="{{asset('assets/images/gallery/gallery04.jpg')}}"></li>
@@ -54,12 +102,18 @@
                                 <li><img src="{{asset('assets/images/gallery/gallery12.jpg')}}"></li>
                                 <li><img src="{{asset('assets/images/gallery/gallery13.jpg')}}"></li>
                                 <li><img src="{{asset('assets/images/gallery/gallery14.jpg')}}"></li>
-                                <li><img src="{{asset('assets/images/gallery/gallery15.jpg')}}"></li>
+                                <li><img src="{{asset('assets/images/gallery/gallery15.jpg')}}"></li> -->
                             </ul>
                         </div>
                         <div class="flexslider" id="carousel">
                             <ul class="slides">
-                                <li><img src="{{asset('assets/images/gallery/gallery01.jpg')}}"></li>
+                            @if(!empty($image))
+                                @foreach($image as $_image)
+                                <li><img src="{{asset('local/public/gallery').'/'.$_image->image_file}}"></li>
+
+                                @endforeach
+                            @endif
+                                <!-- <li><img src="{{asset('assets/images/gallery/gallery01.jpg')}}"></li>
                                 <li><img src="{{asset('assets/images/gallery/gallery02.jpg')}}"></li>
                                 <li><img src="{{asset('assets/images/gallery/gallery03.jpg')}}"></li>
                                 <li><img src="{{asset('assets/images/gallery/gallery04.jpg')}}"></li>
@@ -73,7 +127,7 @@
                                 <li><img src="{{asset('assets/images/gallery/gallery12.jpg')}}"></li>
                                 <li><img src="{{asset('assets/images/gallery/gallery13.jpg')}}"></li>
                                 <li><img src="{{asset('assets/images/gallery/gallery14.jpg')}}"></li>
-                                <li><img src="{{asset('assets/images/gallery/gallery15.jpg')}}"></li>
+                                <li><img src="{{asset('assets/images/gallery/gallery15.jpg')}}"></li> -->
                             </ul>
                         </div>
                     </div>
