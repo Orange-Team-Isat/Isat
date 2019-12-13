@@ -12,23 +12,14 @@
                 <div class="banner">
                     <div class="flexslider">
                         <ul class="slides">
-                            <li>
-                                <!--<div class="mainbanner-txt">
-                                    <p>Neethling Brain Instruments By <br>Columbia University for ISAT Members</p>
-                                    <a class="buttonYellow big" href="#">MORE</a>
-                                </div>-->
-                              
-                                <img src="{{asset('assets/images/index/banner01.jpg')}}">
-                            </li>
-                            <li>
-                                <!--<div class="mainbanner-txt">
-                                    <p>Neethling Brain Instruments By <br>Columbia University for ISAT Members</p>
-                                    <a class="buttonYellow big" href="#">MORE</a>
-                                </div>-->
-                                <img src="{{asset('assets/images/index/banner02.jpg')}}">
-                            </li>
-                            <li><img src="{{asset('assets/images/index/banner03.jpg')}}"></li>
-                            <li><img src="{{asset('assets/images/index/banner04.jpg')}}"></li>
+                        <?php $banner= DB::table('banner')->orderBy('banner_sort','DESC')->get(); ?>
+                        @if(!empty($banner))
+                            @foreach($banner as $_banner)
+                            <li><img src="{{asset('local/public/slide').'/'.$_banner->banner_file}}"></li>
+
+                            @endforeach
+                        @endif
+                            <!--  -->
                         </ul>
                     </div>
                 </div>

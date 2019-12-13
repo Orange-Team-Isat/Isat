@@ -51,7 +51,7 @@
                         <thead class="thead_txt_center">
                             <tr>
                                 <th>No</th>
-                                <th>Sort</th>
+                                <th style="width:60px;">Sort</th>
                                 <th>File</th>
                                 <th>Action</th>
                             </tr>
@@ -61,7 +61,7 @@
                             @foreach ($slide as $item => $value)
                                 <tr>
                                     <td>{{ $i }}</td>
-                                    <td>{{ $value->banner_sort }}</td>
+                                    <td><input type="number" class="form-control change_sort" ref="{{ $value->banner_id }}" value="{{ $value->banner_sort }}" style="width:60px;"></td>
                                     <td><img src="<?php echo asset('local/public/slide/').'/'.$value->banner_file; ?>" width="300px" /></td>
                                     <td>
                                         <a href="{{ url('manageslide/show/'.$value->banner_id) }}"><button class="btn btn-info btn-round btn-mini">edit</button></a>
@@ -107,6 +107,19 @@
 			e.preventDefault();
 		});
 
+        $('.change_sort').keypress(function(){
+            var id = $(this).attr('ref');
+            var sort = $(this).val();
+            var _token = '{{ csrf_field() }}';
+            $.ajax({
+                url: "{{ url('change_sortbanner') }}",
+                method : 'POST',
+                data : { 'banner_id' : id ,'banner_sort':sort , '_token' : _token  },
+                dataType : 'html', 
+                success:function(result){
+                }
+           });
+        });
     });
     function del_user(id) {
         swal({

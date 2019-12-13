@@ -126,5 +126,12 @@ class ManageslideController extends Controller
                     window.location.href = "'.url('manageslide').'" ;
             </script>';
     }
+    public function change_sortbanner(Request $request){
+        $data['banner_sort'] = $request->input('banner_sort');
+        $data['banner_update'] = date('Y-m-d H-i-s');
+
+        DB::table('banner')->where('banner_id',$request->input('banner_id'))->update($data);
+
+    }
     
 }
