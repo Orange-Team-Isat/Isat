@@ -210,6 +210,7 @@
                 <div class="row">
                     <?php //for($i=0;$i<3;$i++){ ?>
                     <?php $gallery= DB::table('gallery')->orderBy('gallery_index',)->get(); 
+
                         $month_th['01'] = 'ม.ค.';
                         $month_th['02'] = 'ก.พ.';
                         $month_th['03'] = 'มี.ค.';
