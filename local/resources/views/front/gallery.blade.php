@@ -15,7 +15,7 @@
                 </div>
             </div>
             
-            <?php  $gallery= DB::table('gallery')->orderBy('gallery_update','DESC')->first(); 
+            <?php  $gallery= DB::table('gallery')->orderBy('gallery_date','DESC')->first(); 
 
                     $month_th['01'] = 'ม.ค.';
                     $month_th['02'] = 'ก.พ.';
@@ -97,7 +97,7 @@
             <!--------------- GALLERY BOX --------------->
             <div class="padding-3col">
                 <div class="row">
-                <?php $gallery= DB::table('gallery')->orderBy('gallery_update','DESC')->get(); 
+                <?php $gallery= DB::table('gallery')->orderBy('gallery_date','DESC')->get(); 
 
                         $month_th['01'] = 'ม.ค.';
                         $month_th['02'] = 'ก.พ.';

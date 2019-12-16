@@ -91,14 +91,13 @@
             <div class="row">
                 <div class="col">
                 @if(!empty($file))
-                    @foreach ($file as $_file)
+                    <!-- @foreach ($file as $_file) -->
                         <div class="content-center mt-4">
-                            <a class="button-PKdownload" href="<?php echo asset('local/public/news_files/').'/'.$_file->file_name; ?>">
-                                <div><i class="far fa-arrow-alt-circle-down"></i></div>
-                                <span>DOWNLOAD FILE</span>
-                            </a>
+                        <a class="button-PKdownload" href="<?php echo asset('local/public/news_files/').'/'.$_file->file_name; ?>"> 
+                         <div><i class="far fa-arrow-alt-circle-down"></i></div>
+                                <span>DOWNLOAD FILE</span></a>
                         </div>
-                    @endforeach
+                    <!-- @endforeach -->
                 @endif
                 </div>
             </div>
