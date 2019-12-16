@@ -43,17 +43,17 @@
                     $month_en['12'] = 'DEC';
             
 
-                        if(!empty($gallery->gallery_date)){
-                        $date = explode('-',$gallery->gallery_date);
-                        if(Session::get('lang') == 'th' ){
-                            $year = $date[0]+543;
-                        }else{
-                            $year = $date[0];
-                        }
-                           $date_text = $date[2].' '.(Session::get('lang') == 'th' ? $month_th[$date[1]] : $month_en[$date[1]] ).' '.$year;
-                        
-                        }  ?> 
+            if(!empty($gallery->gallery_date)){
+                $date = explode('-',$gallery->gallery_date);
+                if(Session::get('lang') == 'th' ){
+                $year = $date[0]+543;
+                }else{
+                $year = $date[0];
+                }
+                $date_text = $date[2].' '.(Session::get('lang') == 'th' ? $month_th[$date[1]] : $month_en[$date[1]] ).' '.$year;
             
+            }  ?> 
+
             <div class="news-bigBox">
                 <div class="row">
                     <div class="col-lg-6 col-md-6 col-12">    

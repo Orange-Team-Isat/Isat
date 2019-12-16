@@ -14,23 +14,62 @@
                     <h2>News & Events</h2>
                 </div>
             </div>
+           
+            <?php  $news= DB::table('news')->orderBy('news_update','DESC')->first(); 
+                       
+                       $month_th['01'] = 'ม.ค.';
+                        $month_th['02'] = 'ก.พ.';
+                        $month_th['03'] = 'มี.ค.';
+                        $month_th['04'] = 'เม.ย.';
+                        $month_th['05'] = 'พ.ค.';
+                        $month_th['06'] = 'มิ.ย.';
+                        $month_th['07'] = 'ก.ค.';
+                        $month_th['08'] = 'ส.ค.';
+                        $month_th['09'] = 'ก.ย';
+                        $month_th['10'] = 'ต.ค.';
+                        $month_th['11'] = 'พ.ย.';
+                        $month_th['12'] = 'ธ.ค.';
+                        $month_en['01'] = 'JAN';
+                        $month_en['02'] = 'FEB';
+                        $month_en['03'] = 'MAR';
+                        $month_en['04'] = 'APR';
+                        $month_en['05'] = 'MAY';
+                        $month_en['06'] = 'JUN';
+                        $month_en['07'] = 'JUL';
+                        $month_en['08'] = 'AUG';
+                        $month_en['09'] = 'SEP';
+                        $month_en['10'] = 'OCT';
+                        $month_en['11'] = 'NOV';
+                        $month_en['12'] = 'DEC';
+                    
+                if(!empty($news->news_date)){
+                    $date = explode('-',$news->news_date);
+                    if(Session::get('lang') == 'th' ){
+                        $year = $date[0]+543;
+                    }else{
+                        $year = $date[0];
+                    }
+                        $date_text = $date[2].' '.(Session::get('lang') == 'th' ? $month_th[$date[1]] : $month_en[$date[1]] ).' '.$year;
+                    
+                    }  ?> 
+                
             
             <div class="news-bigBox">
                 <div class="row">
                     <div class="col-lg-6 col-md-6 col-12">
                         <div class="img-width">
-                            <img src="{{asset('assets/images/news/news03.jpg')}}">
-                            <div class="dateBox greenBG">23<span>NOV</span></div>
+                            <img src="{{{asset('local/public/news').'/'.$news->news_index}}}">
+                            <div class="dateBox greenBG">{{$date[2]}}<span>{{(Session::get('lang') == 'th' ? $month_th[$date[1]] : $month_en[$date[1]] )}}</span></div>
                         </div>
                     </div>
                     <div class="col-lg-6 col-md-6 col-12">
                         <div class="headerBK">
-                            <p>News & Events Topic News & Events Topic News & Events Topic News & Events Topic News & Events Topic</p>
+                            <p>{{(Session::get('lang') == 'th' ? $news->news_title_th : $news->news_title_en) }}</p>
                         </div>
                         <div class="news-tagline">
-                            <p>Eu augue ut lectus arcu bibendum at varius vel. Netus malesuada fames ac turpis egestas integer eget. Volutpat sed cras ornare arcu dui vivamus. Lectus magna fringilla urna porttitor rhoncus dolor. Eu sem integer vitae justo eget magna fermentum. Tempor ori dapibus ultrices in iaculis nunc sed augue lacus. Aliquet eget sit amet tell</p>
+                            <p><?php echo (Session::get('lang') == 'th' ? $news->news_detail_th : $news->news_detail_en); ?></p>
                         </div>
-                        <a class="buttonYellow" href="{{ url('news-detail')}}">Read more</a>
+                        <a class="buttonYellow" href="{{ url('news-detail')}}/{{ $news->news_id }}">Read more</a>
                     </div>
                 </div>
             </div>
@@ -43,25 +82,66 @@
             <!--------------- NEWS BOX --------------->
             <div class="padding-3col">
                 <div class="row">
-                    <?php for($i=0;$i<6;$i++){ ?>
+
+                    <?php $news= DB::table('news')->orderBy('news_update','DESC')->where('news_member',1)->limit(6)->get(); 
+                                
+                                 $month_th['01'] = 'ม.ค.';
+                                 $month_th['02'] = 'ก.พ.';
+                                 $month_th['03'] = 'มี.ค.';
+                                 $month_th['04'] = 'เม.ย.';
+                                 $month_th['05'] = 'พ.ค.';
+                                 $month_th['06'] = 'มิ.ย.';
+                                 $month_th['07'] = 'ก.ค.';
+                                 $month_th['08'] = 'ส.ค.';
+                                 $month_th['09'] = 'ก.ย';
+                                 $month_th['10'] = 'ต.ค.';
+                                 $month_th['11'] = 'พ.ย.';
+                                 $month_th['12'] = 'ธ.ค.';
+                                 $month_en['01'] = 'JAN';
+                                 $month_en['02'] = 'FEB';
+                                 $month_en['03'] = 'MAR';
+                                 $month_en['04'] = 'APR';
+                                 $month_en['05'] = 'MAY';
+                                 $month_en['06'] = 'JUN';
+                                 $month_en['07'] = 'JUL';
+                                 $month_en['08'] = 'AUG';
+                                 $month_en['09'] = 'SEP';
+                                 $month_en['10'] = 'OCT';
+                                 $month_en['11'] = 'NOV';
+                                 $month_en['12'] = 'DEC';
+                                 ?>
+                             @if(!empty($news))
+                            @foreach($news as $_news)   
+                            
+                                <?php if(!empty($_news->news_date)){
+                                    $date = explode('-',$_news->news_date);
+                                    if(Session::get('lang') == 'th' ){
+                                        $year = $date[0]+543;
+                                    }else{
+                                        $year = $date[0];
+                                    }
+                                    $date_text = $date[2].' '.(Session::get('lang') == 'th' ? $month_th[$date[1]] : $month_en[$date[1]] ).' '.$year;
+                                    
+                                }?>
                     <div class="col-lg-4 col-md-4 col-12">
-                        <a class="newsBox" href="{{ url('news-detail')}}">
-                            <div class="img-width"><img src="{{asset('assets/images/news/news01.jpg')}}"></div>
+                        <a class="newsBox" href="{{ url('news-detail')}}/{{ $_news->news_id }}">
+                            <div class="img-width"><img src="{{{asset('local/public/news').'/'.$_news->news_index}}}"></div>
                             <div class="newsBox-topic">
                                 <div class="row">
                                     <div class="col-lg-3 col-md-4 col-3">
-                                        <div class="dateBox skyBG">29<span>NOV</span></div>
+                                        <div class="dateBox skyBG">{{$date[2]}}<span>{{(Session::get('lang') == 'th' ? $month_th[$date[1]] : $month_en[$date[1]] )}}</span></div>
                                     </div>
                                     <div class="col-lg-9 col-md-8 col-9">
                                         <div class="news-topic">
-                                            <p>News & Events Topic News & Events Topic News & Events Topic</p>
+                                        <p>{{(Session::get('lang') == 'th' ? $_news->news_title_th : $_news->news_title_en) }}</p>
                                         </div>
                                     </div>
                                 </div>
                             </div>  
                         </a>
                     </div>
-                    <?php } ?>
+                    @endforeach
+                    @endif
                 </div>
             </div>
             <!--------------- P A G E --------------->
@@ -95,24 +175,64 @@
             </div>
             <div class="padding-3col">
                 <div class="row">
+                <?php $news= DB::table('news')->orderBy('news_update','DESC')->where('news_member',2)->limit(3)->get(); 
+                                
+                                $month_th['01'] = 'ม.ค.';
+                                $month_th['02'] = 'ก.พ.';
+                                $month_th['03'] = 'มี.ค.';
+                                $month_th['04'] = 'เม.ย.';
+                                $month_th['05'] = 'พ.ค.';
+                                $month_th['06'] = 'มิ.ย.';
+                                $month_th['07'] = 'ก.ค.';
+                                $month_th['08'] = 'ส.ค.';
+                                $month_th['09'] = 'ก.ย';
+                                $month_th['10'] = 'ต.ค.';
+                                $month_th['11'] = 'พ.ย.';
+                                $month_th['12'] = 'ธ.ค.';
+                                $month_en['01'] = 'JAN';
+                                $month_en['02'] = 'FEB';
+                                $month_en['03'] = 'MAR';
+                                $month_en['04'] = 'APR';
+                                $month_en['05'] = 'MAY';
+                                $month_en['06'] = 'JUN';
+                                $month_en['07'] = 'JUL';
+                                $month_en['08'] = 'AUG';
+                                $month_en['09'] = 'SEP';
+                                $month_en['10'] = 'OCT';
+                                $month_en['11'] = 'NOV';
+                                $month_en['12'] = 'DEC';
+                                ?>
+                            @if(!empty($news))
+                           @foreach($news as $_news)   
+                           
+                               <?php if(!empty($_news->news_date)){
+                                   $date = explode('-',$_news->news_date);
+                                   if(Session::get('lang') == 'th' ){
+                                       $year = $date[0]+543;
+                                   }else{
+                                       $year = $date[0];
+                                   }
+                                   $date_text = $date[2].' '.(Session::get('lang') == 'th' ? $month_th[$date[1]] : $month_en[$date[1]] ).' '.$year;
+                                   
+                               }?>
                     <div class="col-lg-4 col-md-4 col-12">
-                        <a class="newsBox" href="{{ url('news-detail')}}">
-                            <div class="img-width"><img src="{{asset('assets/images/news/news02.jpg')}}"></div>
+                        <a class="newsBox" href="{{ url('news-detail')}}/{{ $_news->news_id }}">
+                            <div class="img-width"><img src="{{{asset('local/public/news').'/'.$_news->news_index}}}"></div>
                             <div class="newsBox-topic">
                                 <div class="row">
                                     <div class="col-md-4 col-3">
-                                        <div class="dateBox greenBG">23<span>NOV</span></div>
+                                        <div class="dateBox greenBG">{{$date[2]}}<span>{{(Session::get('lang') == 'th' ? $month_th[$date[1]] : $month_en[$date[1]] )}}</span></div>
                                     </div>
                                     <div class="col-md-8 col-9">
                                         <div class="news-topic">
-                                            <p>News & Events Topic News & Events Topic News & Events Topic</p>
+                                        <p>{{(Session::get('lang') == 'th' ? $_news->news_title_th : $_news->news_title_en) }}</p>
                                         </div>
                                     </div>
                                 </div>
                             </div>  
                         </a>
                     </div>
-                    <div class="col-lg-4 col-md-4 col-12">
+                    <!-- <div class="col-lg-4 col-md-4 col-12">
                         <a class="newsBox" href="{{ url('news-detail')}}">
                             <div class="img-width"><img src="{{asset('assets/images/news/news02.jpg')}}"></div>
                             <div class="newsBox-topic">
@@ -145,7 +265,9 @@
                                 </div>
                             </div>  
                         </a>
-                    </div>
+                    </div> -->
+                    @endforeach
+                    @endif
                 </div>
             </div>
         </div>

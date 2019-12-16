@@ -145,7 +145,7 @@
                                     <div class="row">
                                         <div class="col-lg-3 col-md-4 col-12">Website</div>
                                         <div class="col-lg-9 col-md-8 col-12">
-                                            <a href="https://www.abcpathways.co.th/" target="_blank">www.abcpathways.co.th</a>
+                                            <a href="http://<?php echo ( $_school->school_website ); ?>" target="_blank"><?php echo ( $_school->school_website ); ?></a>
                                         </div>
                                     </div>
                                     <div class="row">

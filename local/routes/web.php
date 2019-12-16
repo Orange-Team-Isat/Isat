@@ -42,8 +42,10 @@ Route::get('/gallery', function () {
 Route::get('/news', function () {
     return view('front.news');
 });
-Route::get('/news-detail', function () {
-    return view('front.news-detail');
+
+Route::get('/news-detail/{id}', function ($id) {
+    $data['news_id'] = $id;
+    return view('front.news-detail',$data);
 });
 
 
