@@ -100,7 +100,7 @@
                                  $month_th['06'] = 'มิ.ย.';
                                  $month_th['07'] = 'ก.ค.';
                                  $month_th['08'] = 'ส.ค.';
-                                 $month_th['09'] = 'ก.ย';
+                                 $month_th['09'] = 'ก.ย.';
                                  $month_th['10'] = 'ต.ค.';
                                  $month_th['11'] = 'พ.ย.';
                                  $month_th['12'] = 'ธ.ค.';
@@ -117,19 +117,19 @@
                                  $month_en['11'] = 'NOV';
                                  $month_en['12'] = 'DEC';
                                  ?>
-                             @if(!empty($news))
-                            @foreach($news as $_news)   
+                @if(!empty($news))
+                    @foreach($news as $_news)   
+                    
+                        <?php if(!empty($_news->news_date)){
+                            $date = explode('-',$_news->news_date);
+                            if(Session::get('lang') == 'th' ){
+                                $year = $date[0]+543;
+                            }else{
+                                $year = $date[0];
+                            }
+                            $date_text = $date[2].' '.(Session::get('lang') == 'th' ? $month_th[$date[1]] : $month_en[$date[1]] ).' '.$year;
                             
-                                <?php if(!empty($_news->news_date)){
-                                    $date = explode('-',$_news->news_date);
-                                    if(Session::get('lang') == 'th' ){
-                                        $year = $date[0]+543;
-                                    }else{
-                                        $year = $date[0];
-                                    }
-                                    $date_text = $date[2].' '.(Session::get('lang') == 'th' ? $month_th[$date[1]] : $month_en[$date[1]] ).' '.$year;
-                                    
-                                }?>
+                        }?>
 
 
                             <div class="col-lg-6 col-md-6 col-12">
@@ -150,8 +150,8 @@
                                 </a>
                             </div>
 
-                            @endforeach
-                            @endif
+                    @endforeach
+                @endif
                             <!-- <div class="col-lg-6 col-md-6 col-12">
                                 <a class="newsBox" href="{{ url('news-detail')}}">
                                     <div class="img-width"><img src="{{asset('assets/images/news/news01.jpg')}}"></div>
@@ -191,7 +191,7 @@
                                 $month_th['06'] = 'มิ.ย.';
                                 $month_th['07'] = 'ก.ค.';
                                 $month_th['08'] = 'ส.ค.';
-                                $month_th['09'] = 'ก.ย';
+                                $month_th['09'] = 'ก.ย.';
                                 $month_th['10'] = 'ต.ค.';
                                 $month_th['11'] = 'พ.ย.';
                                 $month_th['12'] = 'ธ.ค.';
@@ -208,7 +208,7 @@
                                 $month_en['11'] = 'NOV';
                                 $month_en['12'] = 'DEC';
                                 ?>
-                            @if(!empty($news))
+                        @if(!empty($news))
                            @foreach($news as $_news)   
                            
                                <?php if(!empty($_news->news_date)){
@@ -237,10 +237,8 @@
                                         </div>  
                                     </a> 
                                 </div>
-                                @endforeach
-                            @endif
-                              
-    
+                            @endforeach
+                        @endif   
                                 <!-- NEWS :: 02
                                 <div class="col-lg-12 col-md-4 col-12">
                                     <a class="newsBox side" href="{{ url('news-detail')}}">
@@ -285,69 +283,69 @@
             </div>     
         </div>
     </div>
-    
-    <!--------------- G A L L E R Y --------------->
-    <div class="BlueBG">
-        <div class="container">
-            <div class="row">
-                <div class="col">
-                    <h2>Photo Gallery</h2>
-                </div>
-            </div>
-            <div class="padding-3col">
-                <div class="row">
-                    <?php //for($i=0;$i<3;$i++){ ?>
-                    <?php $gallery= DB::table('gallery')->orderBy('gallery_date','DESC')->limit(6)->get(); 
 
-                        $month_th['01'] = 'ม.ค.';
-                        $month_th['02'] = 'ก.พ.';
-                        $month_th['03'] = 'มี.ค.';
-                        $month_th['04'] = 'เม.ย.';
-                        $month_th['05'] = 'พ.ค.';
-                        $month_th['06'] = 'มิ.ย.';
-                        $month_th['07'] = 'ก.ค.';
-                        $month_th['08'] = 'ส.ค.';
-                        $month_th['09'] = 'ก.ย';
-                        $month_th['10'] = 'ต.ค.';
-                        $month_th['11'] = 'พ.ย.';
-                        $month_th['12'] = 'ธ.ค.';
-                        $month_en['01'] = 'JAN';
-                        $month_en['02'] = 'FEB';
-                        $month_en['03'] = 'MAR';
-                        $month_en['04'] = 'APR';
-                        $month_en['05'] = 'MAY';
-                        $month_en['06'] = 'JUN';
-                        $month_en['07'] = 'JUL';
-                        $month_en['08'] = 'AUG';
-                        $month_en['09'] = 'SEP';
-                        $month_en['10'] = 'OCT';
-                        $month_en['11'] = 'NOV';
-                        $month_en['12'] = 'DEC';
-                    ?>
+                <!--------------- G A L L E R Y --------------->
+                <div class="BlueBG">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col">
+                                <h2>Photo Gallery</h2>
+                            </div>
+                        </div>
+                        <div class="padding-3col">
+                            <div class="row">
+                                <?php //for($i=0;$i<3;$i++){ ?>
+                                <?php $gallery= DB::table('gallery')->orderBy('gallery_date','DESC')->limit(3)->get(); 
 
-                    @if(!empty($gallery))
-                    @foreach($gallery as $_gallery)   
-                            <?php if(!empty($_gallery->gallery_date)){
-                             $date = explode('-',$_gallery->gallery_date);
-                             if(Session::get('lang') == 'th' ){
-                                 $year = $date[0]+543;
-                             }else{
-                                 $year = $date[0];
-                             }
-                                $date_text = $date[2].' '.(Session::get('lang') == 'th' ? $month_th[$date[1]] : $month_en[$date[1]] ).' '.$year;
-                             
-                            }  ?> 
-                    <div class="col-lg-4 col-md-4 col-12">
-                        <a class="galleryBox" href="{{ url('/gallery-detail')}}/{{$_gallery->gallery_id}}">
-                            <div class="img-width"><img src="{{asset('local/public/gallery').'/'.$_gallery->gallery_index}}"></div>
-                            <div class="galBox-topic">
-                                <h6>{{ (Session::get('lang') == 'th' ? $_gallery->gallery_title_th : $_gallery->gallery_title_en) }}</h6>
-                                <div class="dateBox-cc">{{$date_text}}</div>
-                            </div>  
-                        </a>
-                    </div>
-                    @endforeach
-                    @endif
+                                            $month_th['01'] = 'ม.ค.';
+                                            $month_th['02'] = 'ก.พ.';
+                                            $month_th['03'] = 'มี.ค.';
+                                            $month_th['04'] = 'เม.ย.';
+                                            $month_th['05'] = 'พ.ค.';
+                                            $month_th['06'] = 'มิ.ย.';
+                                            $month_th['07'] = 'ก.ค.';
+                                            $month_th['08'] = 'ส.ค.';
+                                            $month_th['09'] = 'ก.ย.';
+                                            $month_th['10'] = 'ต.ค.';
+                                            $month_th['11'] = 'พ.ย.';
+                                            $month_th['12'] = 'ธ.ค.';
+                                            $month_en['01'] = 'JAN';
+                                            $month_en['02'] = 'FEB';
+                                            $month_en['03'] = 'MAR';
+                                            $month_en['04'] = 'APR';
+                                            $month_en['05'] = 'MAY';
+                                            $month_en['06'] = 'JUN';
+                                            $month_en['07'] = 'JUL';
+                                            $month_en['08'] = 'AUG';
+                                            $month_en['09'] = 'SEP';
+                                            $month_en['10'] = 'OCT';
+                                            $month_en['11'] = 'NOV';
+                                            $month_en['12'] = 'DEC';
+                                    ?>
+
+                            @if(!empty($gallery))
+                                @foreach($gallery as $_gallery)   
+                                        <?php if(!empty($_gallery->gallery_date)){
+                                            $date = explode('-',$_gallery->gallery_date);
+                                            if(Session::get('lang') == 'th' ){
+                                                $year = $date[0]+543;
+                                            }else{
+                                                $year = $date[0];
+                                            }
+                                            $date_text = $date[2].' '.(Session::get('lang') == 'th' ? $month_th[$date[1]] : $month_en[$date[1]] ).' '.$year;
+                                            
+                                        }  ?> 
+                                <div class="col-lg-4 col-md-4 col-12">
+                                    <a class="galleryBox" href="{{ url('/gallery-detail')}}/{{$_gallery->gallery_id}}">
+                                        <div class="img-width"><img src="{{asset('local/public/gallery').'/'.$_gallery->gallery_index}}"></div>
+                                        <div class="galBox-topic">
+                                            <h6>{{ (Session::get('lang') == 'th' ? $_gallery->gallery_title_th : $_gallery->gallery_title_en) }}</h6>
+                                            <div class="dateBox-cc">{{$date_text}}</div>
+                                        </div>  
+                                    </a>
+                                </div>
+                                @endforeach
+                            @endif
 
                     <?php //} ?>
                 </div>

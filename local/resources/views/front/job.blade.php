@@ -29,37 +29,37 @@
         
                     <?php $jobs= DB::table('jobs')->where('jobs_type',1)->get(); 
                     
-                     $month_th['01'] = 'ม.ค.';
-                     $month_th['02'] = 'ก.พ.';
-                     $month_th['03'] = 'มี.ค.';
-                     $month_th['04'] = 'เม.ย.';
-                     $month_th['05'] = 'พ.ค.';
-                     $month_th['06'] = 'มิ.ย.';
-                     $month_th['07'] = 'ก.ค.';
-                     $month_th['08'] = 'ส.ค.';
-                     $month_th['09'] = 'ก.ย';
-                     $month_th['10'] = 'ต.ค.';
-                     $month_th['11'] = 'พ.ย.';
-                     $month_th['12'] = 'ธ.ค.';
-                     $month_en['01'] = 'JAN';
-                     $month_en['02'] = 'FEB';
-                     $month_en['03'] = 'MAR';
-                     $month_en['04'] = 'APR';
-                     $month_en['05'] = 'MAY';
-                     $month_en['06'] = 'JUN';
-                     $month_en['07'] = 'JUL';
-                     $month_en['08'] = 'AUG';
-                     $month_en['09'] = 'SEP';
-                     $month_en['10'] = 'OCT';
-                     $month_en['11'] = 'NOV';
-                     $month_en['12'] = 'DEC';
-                     ?>
+                                $month_th['01'] = 'ม.ค.';
+                                $month_th['02'] = 'ก.พ.';
+                                $month_th['03'] = 'มี.ค.';
+                                $month_th['04'] = 'เม.ย.';
+                                $month_th['05'] = 'พ.ค.';
+                                $month_th['06'] = 'มิ.ย.';
+                                $month_th['07'] = 'ก.ค.';
+                                $month_th['08'] = 'ส.ค.';
+                                $month_th['09'] = 'ก.ย';
+                                $month_th['10'] = 'ต.ค.';
+                                $month_th['11'] = 'พ.ย.';
+                                $month_th['12'] = 'ธ.ค.';
+                                $month_en['01'] = 'JAN';
+                                $month_en['02'] = 'FEB';
+                                $month_en['03'] = 'MAR';
+                                $month_en['04'] = 'APR';
+                                $month_en['05'] = 'MAY';
+                                $month_en['06'] = 'JUN';
+                                $month_en['07'] = 'JUL';
+                                $month_en['08'] = 'AUG';
+                                $month_en['09'] = 'SEP';
+                                $month_en['10'] = 'OCT';
+                                $month_en['11'] = 'NOV';
+                                $month_en['12'] = 'DEC';
+                                ?>
             
                     <div class="col-12">
                         <div class="jobBox">
                             <div class="row">
                             
-                            @if(!empty($jobs))
+                    @if(!empty($jobs))
                             @foreach($jobs as $_jobs)   
                             
                                 <?php if(!empty($_jobs->jobs_date)){
@@ -83,7 +83,7 @@
                                 </div>
                             
                             @endforeach
-                            @endif
+                    @endif
 
                             </div>
                         </div>
@@ -142,46 +142,47 @@
             
             <?php $jobs= DB::table('jobs')->where('jobs_type',2)->get(); 
                     
-                    $month_th['01'] = 'ม.ค.';
-                    $month_th['02'] = 'ก.พ.';
-                    $month_th['03'] = 'มี.ค.';
-                    $month_th['04'] = 'เม.ย.';
-                    $month_th['05'] = 'พ.ค.';
-                    $month_th['06'] = 'มิ.ย.';
-                    $month_th['07'] = 'ก.ค.';
-                    $month_th['08'] = 'ส.ค.';
-                    $month_th['09'] = 'ก.ย';
-                    $month_th['10'] = 'ต.ค.';
-                    $month_th['11'] = 'พ.ย.';
-                    $month_th['12'] = 'ธ.ค.';
-                    $month_en['01'] = 'JAN';
-                    $month_en['02'] = 'FEB';
-                    $month_en['03'] = 'MAR';
-                    $month_en['04'] = 'APR';
-                    $month_en['05'] = 'MAY';
-                    $month_en['06'] = 'JUN';
-                    $month_en['07'] = 'JUL';
-                    $month_en['08'] = 'AUG';
-                    $month_en['09'] = 'SEP';
-                    $month_en['10'] = 'OCT';
-                    $month_en['11'] = 'NOV';
-                    $month_en['12'] = 'DEC';
-                    ?>
+                        $month_th['01'] = 'ม.ค.';
+                        $month_th['02'] = 'ก.พ.';
+                        $month_th['03'] = 'มี.ค.';
+                        $month_th['04'] = 'เม.ย.';
+                        $month_th['05'] = 'พ.ค.';
+                        $month_th['06'] = 'มิ.ย.';
+                        $month_th['07'] = 'ก.ค.';
+                        $month_th['08'] = 'ส.ค.';
+                        $month_th['09'] = 'ก.ย';
+                        $month_th['10'] = 'ต.ค.';
+                        $month_th['11'] = 'พ.ย.';
+                        $month_th['12'] = 'ธ.ค.';
+                        $month_en['01'] = 'JAN';
+                        $month_en['02'] = 'FEB';
+                        $month_en['03'] = 'MAR';
+                        $month_en['04'] = 'APR';
+                        $month_en['05'] = 'MAY';
+                        $month_en['06'] = 'JUN';
+                        $month_en['07'] = 'JUL';
+                        $month_en['08'] = 'AUG';
+                        $month_en['09'] = 'SEP';
+                        $month_en['10'] = 'OCT';
+                        $month_en['11'] = 'NOV';
+                        $month_en['12'] = 'DEC';
+                        ?>
                 <div class="row">
                     <div class="col-12">
                         <div class="jobBox">
                             <div class="row">
-                            @if(!empty($jobs))
-                            @foreach($jobs as $_jobs)   
+                            
+                    @if(!empty($jobs))
+                        @foreach($jobs as $_jobs)   
                             
                                 <?php if(!empty($_jobs->jobs_date)){
-                                    $date = explode('-',$_jobs->jobs_date);
-                                    if(Session::get('lang') == 'th' ){
-                                        $year = $date[0]+543;
-                                    }else{
-                                        $year = $date[0];
-                                    }
-                                    $date_text = $date[2].' '.(Session::get('lang') == 'th' ? $month_th[$date[1]] : $month_en[$date[1]] ).' '.$year;
+                                $date = explode('-',$_jobs->jobs_date);
+                                if(Session::get('lang') == 'th' ){
+                                    $year = $date[0]+543;
+                                }else{
+                                    $year = $date[0];
+                                }
+                                $date_text = $date[2].' '.(Session::get('lang') == 'th' ? $month_th[$date[1]] : $month_en[$date[1]] ).' '.$year;
                                     
                                 }?>
                                 <div class="col-lg-10 col-md-9 col-12">
@@ -192,8 +193,8 @@
                                     <div class="col-lg-2 col-md-3 col-12">
                                     <a class="buttonYellow" href="{{ url('job-detail')}}/{{ $_jobs->jobs_id }}">Read more</a>
                                 </div>
-                            @endforeach
-                            @endif
+                        @endforeach
+                    @endif
                             </div>
                         </div>
                     </div>

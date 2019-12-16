@@ -25,7 +25,7 @@
                     $month_th['06'] = 'มิ.ย.';
                     $month_th['07'] = 'ก.ค.';
                     $month_th['08'] = 'ส.ค.';
-                    $month_th['09'] = 'ก.ย';
+                    $month_th['09'] = 'ก.ย.';
                     $month_th['10'] = 'ต.ค.';
                     $month_th['11'] = 'พ.ย.';
                     $month_th['12'] = 'ธ.ค.';
@@ -107,7 +107,7 @@
                         $month_th['06'] = 'มิ.ย.';
                         $month_th['07'] = 'ก.ค.';
                         $month_th['08'] = 'ส.ค.';
-                        $month_th['09'] = 'ก.ย';
+                        $month_th['09'] = 'ก.ย.';
                         $month_th['10'] = 'ต.ค.';
                         $month_th['11'] = 'พ.ย.';
                         $month_th['12'] = 'ธ.ค.';
@@ -126,7 +126,7 @@
                     ?>
 
                     @if(!empty($gallery))
-                    @foreach($gallery as $_gallery)   
+                        @foreach($gallery as $_gallery)   
                             <?php if(!empty($_gallery->gallery_date)){
                              $date = explode('-',$_gallery->gallery_date);
                              if(Session::get('lang') == 'th' ){
@@ -148,7 +148,7 @@
                             </div>  
                         </a>
                     </div>
-                    @endforeach
+                        @endforeach
                     @endif
                 </div>
             </div>
@@ -180,7 +180,7 @@
     
     
     @include('front.inc_topbutton')
-
+    
     @include('front.inc_footer')
     
 </body>

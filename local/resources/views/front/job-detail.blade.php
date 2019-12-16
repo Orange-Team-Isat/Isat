@@ -18,30 +18,30 @@
             </div>
             <?php $jobs = DB::table('jobs')->where('jobs_id',$jobs_id)->first(); 
                     
-                    $month_th['01'] = 'ม.ค.';
-                    $month_th['02'] = 'ก.พ.';
-                    $month_th['03'] = 'มี.ค.';
-                    $month_th['04'] = 'เม.ย.';
-                    $month_th['05'] = 'พ.ค.';
-                    $month_th['06'] = 'มิ.ย.';
-                    $month_th['07'] = 'ก.ค.';
-                    $month_th['08'] = 'ส.ค.';
-                    $month_th['09'] = 'ก.ย';
-                    $month_th['10'] = 'ต.ค.';
-                    $month_th['11'] = 'พ.ย.';
-                    $month_th['12'] = 'ธ.ค.';
-                    $month_en['01'] = 'JAN';
-                    $month_en['02'] = 'FEB';
-                    $month_en['03'] = 'MAR';
-                    $month_en['04'] = 'APR';
-                    $month_en['05'] = 'MAY';
-                    $month_en['06'] = 'JUN';
-                    $month_en['07'] = 'JUL';
-                    $month_en['08'] = 'AUG';
-                    $month_en['09'] = 'SEP';
-                    $month_en['10'] = 'OCT';
-                    $month_en['11'] = 'NOV';
-                    $month_en['12'] = 'DEC';
+                        $month_th['01'] = 'ม.ค.';
+                        $month_th['02'] = 'ก.พ.';
+                        $month_th['03'] = 'มี.ค.';
+                        $month_th['04'] = 'เม.ย.';
+                        $month_th['05'] = 'พ.ค.';
+                        $month_th['06'] = 'มิ.ย.';
+                        $month_th['07'] = 'ก.ค.';
+                        $month_th['08'] = 'ส.ค.';
+                        $month_th['09'] = 'ก.ย';
+                        $month_th['10'] = 'ต.ค.';
+                        $month_th['11'] = 'พ.ย.';
+                        $month_th['12'] = 'ธ.ค.';
+                        $month_en['01'] = 'JAN';
+                        $month_en['02'] = 'FEB';
+                        $month_en['03'] = 'MAR';
+                        $month_en['04'] = 'APR';
+                        $month_en['05'] = 'MAY';
+                        $month_en['06'] = 'JUN';
+                        $month_en['07'] = 'JUL';
+                        $month_en['08'] = 'AUG';
+                        $month_en['09'] = 'SEP';
+                        $month_en['10'] = 'OCT';
+                        $month_en['11'] = 'NOV';
+                        $month_en['12'] = 'DEC';
                    
                         if(!empty($jobs->jobs_date)){
                                 $date = explode('-',$jobs->jobs_date);
@@ -52,7 +52,7 @@
                                 }
                                 $date_text = $date[2].' '.(Session::get('lang') == 'th' ? $month_th[$date[1]] : $month_en[$date[1]] ).' '.$year;   
                             }  
-                ?>
+                    ?>
             <div class="row">               
                 <div class="col">
                     <div class="jobDetail-position">

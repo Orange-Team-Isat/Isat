@@ -53,8 +53,6 @@
                                 <th>No</th>
                                 <th>Jobs Name(TH)</th>
                                 <th>Jobs Name(EN)</th>
-                                <!-- <th>Job Description</th>
-                                <th>Qualifications</th> -->
                                 <th>Action</th>
                             </tr>
                         </thead>
@@ -65,9 +63,6 @@
                                     <td>{{ $i }}</td>
                                     <td>{{ $value->jobs_name_th }}</td>
                                     <td>{{ $value->jobs_name_en }}</td>
-                                    <!-- <td>{{ $value->jobs_detail_th}}</td>
-                                    <td>{{ $value->jobs_detail_en}}</td> -->
-                                    <td>{{ $value->jobs_qualifications}}</td>
                                     <td>
                                         <a href="{{ url('managejob/show/'.$value->jobs_id) }}"><button class="btn btn-info btn-round btn-mini">edit</button></a>
                                         <a href="{{ url('managejob/del/'.$value->jobs_id) }}"><button class="btn btn-danger btn-round btn-mini">delete</button></a>
@@ -83,8 +78,6 @@
                                 <th>No</th>
                                 <th>Jobs Name(TH)</th>
                                 <th>Jobs Name(EN)</th>
-                                <!-- <th>Job Description</th>
-                                <th>Qualifications</th> -->
                                 <th>Action</th>
                             </tr>
                         </thead>

@@ -161,7 +161,7 @@
                         </div>
                     </div>
                     @endforeach
-                            @endif
+                @endif
                 </div>
             </div><!-- SCHOOL :: 01 -->
             
@@ -247,8 +247,7 @@
     </div>
     
     
-     @include('front.inc_topbutton')
-   
+     @include('front.inc_topbutton')   
      @include('front.inc_footer')
     
 </body>
