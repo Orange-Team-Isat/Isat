@@ -15,9 +15,9 @@
                 </div>
             </div>
            
-            <?php  $news= DB::table('news')->orderBy('news_update','DESC')->first(); 
+            <?php  $news= DB::table('news')->orderBy('news_date','DESC')->first(); 
                        
-                       $month_th['01'] = 'ม.ค.';
+                        $month_th['01'] = 'ม.ค.';
                         $month_th['02'] = 'ก.พ.';
                         $month_th['03'] = 'มี.ค.';
                         $month_th['04'] = 'เม.ย.';
@@ -110,37 +110,37 @@
                                  $month_en['11'] = 'NOV';
                                  $month_en['12'] = 'DEC';
                                  ?>
-                             @if(!empty($news))
-                            @foreach($news as $_news)   
-                            
-                                <?php if(!empty($_news->news_date)){
-                                    $date = explode('-',$_news->news_date);
-                                    if(Session::get('lang') == 'th' ){
-                                        $year = $date[0]+543;
-                                    }else{
-                                        $year = $date[0];
-                                    }
-                                    $date_text = $date[2].' '.(Session::get('lang') == 'th' ? $month_th[$date[1]] : $month_en[$date[1]] ).' '.$year;
-                                    
-                                }?>
-                    <div class="col-lg-4 col-md-4 col-12">
-                        <a class="newsBox" href="{{ url('news-detail')}}/{{ $_news->news_id }}">
-                            <div class="img-width"><img src="{{{asset('local/public/news').'/'.$_news->news_index}}}"></div>
-                            <div class="newsBox-topic">
-                                <div class="row">
-                                    <div class="col-lg-3 col-md-4 col-3">
-                                        <div class="dateBox skyBG">{{$date[2]}}<span>{{(Session::get('lang') == 'th' ? $month_th[$date[1]] : $month_en[$date[1]] )}}</span></div>
-                                    </div>
-                                    <div class="col-lg-9 col-md-8 col-9">
-                                        <div class="news-topic">
-                                        <p>{{(Session::get('lang') == 'th' ? $_news->news_title_th : $_news->news_title_en) }}</p>
+                    @if(!empty($news))
+                        @foreach($news as $_news)   
+                        
+                            <?php if(!empty($_news->news_date)){
+                                $date = explode('-',$_news->news_date);
+                                if(Session::get('lang') == 'th' ){
+                                    $year = $date[0]+543;
+                                }else{
+                                    $year = $date[0];
+                                }
+                                $date_text = $date[2].' '.(Session::get('lang') == 'th' ? $month_th[$date[1]] : $month_en[$date[1]] ).' '.$year;
+                                
+                            }?>
+                            <div class="col-lg-4 col-md-4 col-12">
+                                <a class="newsBox" href="{{ url('news-detail')}}/{{ $_news->news_id }}">
+                                    <div class="img-width"><img src="{{{asset('local/public/news').'/'.$_news->news_index}}}"></div>
+                                    <div class="newsBox-topic">
+                                        <div class="row">
+                                            <div class="col-lg-3 col-md-4 col-3">
+                                                <div class="dateBox skyBG">{{$date[2]}}<span>{{(Session::get('lang') == 'th' ? $month_th[$date[1]] : $month_en[$date[1]] )}}</span></div>
+                                            </div>
+                                            <div class="col-lg-9 col-md-8 col-9">
+                                                <div class="news-topic">
+                                                <p>{{(Session::get('lang') == 'th' ? $_news->news_title_th : $_news->news_title_en) }}</p>
+                                                </div>
+                                            </div>
                                         </div>
-                                    </div>
-                                </div>
-                            </div>  
-                        </a>
-                    </div>
-                    @endforeach
+                                    </div>  
+                                </a>
+                            </div>
+                        @endforeach
                     @endif
                 </div>
             </div>
@@ -202,71 +202,71 @@
                                 $month_en['11'] = 'NOV';
                                 $month_en['12'] = 'DEC';
                                 ?>
-                            @if(!empty($news))
-                           @foreach($news as $_news)   
-                           
-                               <?php if(!empty($_news->news_date)){
-                                   $date = explode('-',$_news->news_date);
-                                   if(Session::get('lang') == 'th' ){
-                                       $year = $date[0]+543;
-                                   }else{
-                                       $year = $date[0];
-                                   }
-                                   $date_text = $date[2].' '.(Session::get('lang') == 'th' ? $month_th[$date[1]] : $month_en[$date[1]] ).' '.$year;
-                                   
-                               }?>
-                    <div class="col-lg-4 col-md-4 col-12">
-                        <a class="newsBox" href="{{ url('news-detail')}}/{{ $_news->news_id }}">
-                            <div class="img-width"><img src="{{{asset('local/public/news').'/'.$_news->news_index}}}"></div>
-                            <div class="newsBox-topic">
-                                <div class="row">
-                                    <div class="col-md-4 col-3">
-                                        <div class="dateBox greenBG">{{$date[2]}}<span>{{(Session::get('lang') == 'th' ? $month_th[$date[1]] : $month_en[$date[1]] )}}</span></div>
-                                    </div>
-                                    <div class="col-md-8 col-9">
-                                        <div class="news-topic">
-                                        <p>{{(Session::get('lang') == 'th' ? $_news->news_title_th : $_news->news_title_en) }}</p>
+                    @if(!empty($news))
+                        @foreach($news as $_news)   
+                        
+                            <?php if(!empty($_news->news_date)){
+                                $date = explode('-',$_news->news_date);
+                                if(Session::get('lang') == 'th' ){
+                                    $year = $date[0]+543;
+                                }else{
+                                    $year = $date[0];
+                                }
+                                $date_text = $date[2].' '.(Session::get('lang') == 'th' ? $month_th[$date[1]] : $month_en[$date[1]] ).' '.$year;
+                                
+                            }?>
+                            <div class="col-lg-4 col-md-4 col-12">
+                                <a class="newsBox" href="{{ url('news-detail')}}/{{ $_news->news_id }}">
+                                    <div class="img-width"><img src="{{{asset('local/public/news').'/'.$_news->news_index}}}"></div>
+                                    <div class="newsBox-topic">
+                                        <div class="row">
+                                            <div class="col-md-4 col-3">
+                                                <div class="dateBox greenBG">{{$date[2]}}<span>{{(Session::get('lang') == 'th' ? $month_th[$date[1]] : $month_en[$date[1]] )}}</span></div>
+                                            </div>
+                                            <div class="col-md-8 col-9">
+                                                <div class="news-topic">
+                                                <p>{{(Session::get('lang') == 'th' ? $_news->news_title_th : $_news->news_title_en) }}</p>
+                                                </div>
+                                            </div>
                                         </div>
+                                    </div>  
+                                </a>
+                            </div>
+                                    <!-- <div class="col-lg-4 col-md-4 col-12">
+                                        <a class="newsBox" href="{{ url('news-detail')}}">
+                                            <div class="img-width"><img src="{{asset('assets/images/news/news02.jpg')}}"></div>
+                                            <div class="newsBox-topic">
+                                                <div class="row">
+                                                    <div class="col-md-4 col-3">
+                                                        <div class="dateBox skyBG">29<span>NOV</span></div>
+                                                    </div>
+                                                    <div class="col-md-8 col-9">
+                                                        <div class="news-topic">
+                                                            <p>News & Events Topic News & Events Topic News & Events Topic</p>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>  
+                                        </a>
                                     </div>
-                                </div>
-                            </div>  
-                        </a>
-                    </div>
-                    <!-- <div class="col-lg-4 col-md-4 col-12">
-                        <a class="newsBox" href="{{ url('news-detail')}}">
-                            <div class="img-width"><img src="{{asset('assets/images/news/news02.jpg')}}"></div>
-                            <div class="newsBox-topic">
-                                <div class="row">
-                                    <div class="col-md-4 col-3">
-                                        <div class="dateBox skyBG">29<span>NOV</span></div>
-                                    </div>
-                                    <div class="col-md-8 col-9">
-                                        <div class="news-topic">
-                                            <p>News & Events Topic News & Events Topic News & Events Topic</p>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>  
-                        </a>
-                    </div>
-                    <div class="col-lg-4 col-md-4 col-12">
-                        <a class="newsBox" href="{{ url('news-detail')}}">
-                            <div class="img-width"><img src="{{asset('assets/images/news/news02.jpg')}}"></div>
-                            <div class="newsBox-topic">
-                                <div class="row">
-                                    <div class="col-md-4 col-3">
-                                        <div class="dateBox skyBG">29<span>NOV</span></div>
-                                    </div>
-                                    <div class="col-md-8 col-9">
-                                        <div class="news-topic">
-                                            <p>News & Events Topic News & Events Topic News & Events Topic</p>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>  
-                        </a>
-                    </div> -->
-                    @endforeach
+                                    <div class="col-lg-4 col-md-4 col-12">
+                                        <a class="newsBox" href="{{ url('news-detail')}}">
+                                            <div class="img-width"><img src="{{asset('assets/images/news/news02.jpg')}}"></div>
+                                            <div class="newsBox-topic">
+                                                <div class="row">
+                                                    <div class="col-md-4 col-3">
+                                                        <div class="dateBox skyBG">29<span>NOV</span></div>
+                                                    </div>
+                                                    <div class="col-md-8 col-9">
+                                                        <div class="news-topic">
+                                                            <p>News & Events Topic News & Events Topic News & Events Topic</p>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>  
+                                        </a>
+                                    </div> -->
+                        @endforeach
                     @endif
                 </div>
             </div>
