@@ -136,6 +136,14 @@ Route::get('managejob/show/{id}','ManagejobController@show');
 Route::get('managejob/del/{id}','ManagejobController@delete');
 Route::post('managejob/update_jobs','ManagejobController@update_jobs');
 
+Route::get('managefaq','ManagefaqController@index');
+Route::get('show_faq','ManagefaqController@show_user');
+Route::get('managefaq/create','ManagefaqController@create');
+Route::post('managefaq/store_faq','ManagefaqController@store_faq');
+Route::get('managefaq/show/{id}','ManagefaqController@show');
+Route::get('managefaq/del/{id}','ManagefaqController@delete');
+Route::post('managefaq/update_faq','ManagefaqController@update_faq');
+
 Route::get('managemember','ManagememberController@index');
 Route::get('show_member','ManagememberController@show_user');
 Route::get('managemember/create','ManagememberController@create');

@@ -105,6 +105,13 @@
                     <span class="pcoded-mcaret"></span>
                 </a>
             </li>
+            <li id="pcoded-hasmenu">
+                <a href="{{ url('managefaq') }}">
+                    <span class="pcoded-micon"><i class="fa fa-users"></i><b>M</b></span>
+                    <span class="pcoded-mtext text_show">จัดการข้อมูลคำถาม</span>
+                    <span class="pcoded-mcaret"></span>
+                </a>
+            </li>
             
 <!--             
             {{-- <li id="pcoded-hasmenu">
