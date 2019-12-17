@@ -5,7 +5,7 @@
         <div class="row">
             <div class="col-12">
             
-            <?php $news= DB::table('news')->orderBy('news_update','DESC')->limit(3)->get(); 
+            <?php $news= DB::table('news')->orderBy('news_date','DESC')->limit(3)->get(); 
                                 
                                  $month_th['01'] = 'ม.ค.';
                                  $month_th['02'] = 'ก.พ.';

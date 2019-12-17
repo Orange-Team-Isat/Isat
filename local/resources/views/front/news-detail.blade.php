@@ -51,21 +51,21 @@
                         }
                         $date_text = $date[2].' '.(Session::get('lang') == 'th' ? $month_th[$date[1]] : $month_en[$date[1]] ).' '.$year;   
                     }  
-             ?>
-            <div class="row">
-                <div class="col">
-                    <div class="newsDetail-topic">
-                        <h3 class="subTopic">{{(Session::get('lang') == 'th' ? $news->news_title_th : $news->news_title_en) }}</h3>
-                        <div class="dateBox-cc greenBG">{{$date_text}}</div>
+                ?>
+                    <div class="row">
+                        <div class="col">
+                            <div class="newsDetail-topic">
+                                <h3 class="subTopic">{{(Session::get('lang') == 'th' ? $news->news_title_th : $news->news_title_en) }}</h3>
+                                <div class="dateBox-cc greenBG">{{$date_text}}</div>
+                            </div>
+                        </div>
                     </div>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-lg-10 col-12 offset-lg-1 mb-5">
-                <p><?php echo (Session::get('lang') == 'th' ? $news->news_detail_th : $news->news_detail_en); ?></p>
-                    <!-- <div class="img-width border"><img src="{{asset('assets/images/news/news03.jpg')}}"></div> -->
-                </div>
-            </div>
+                    <div class="row">
+                        <div class="col-lg-10 col-12 offset-lg-1 mb-5">
+                        <p><?php echo (Session::get('lang') == 'th' ? $news->news_detail_th : $news->news_detail_en); ?></p>
+                            <!-- <div class="img-width border"><img src="{{asset('assets/images/news/news03.jpg')}}"></div> -->
+                        </div>
+                    </div>
             <!-- <div class="row">
                 <div class="col">
                     <div class="content-txt txt-indent mb-5">
@@ -91,13 +91,13 @@
             <div class="row">
                 <div class="col">
                 @if(!empty($file))
-                    <!-- @foreach ($file as $_file) -->
+                    @foreach ($file as $_file)
                         <div class="content-center mt-4">
                         <a class="button-PKdownload" href="<?php echo asset('local/public/news_files/').'/'.$_file->file_name; ?>"> 
                          <div><i class="far fa-arrow-alt-circle-down"></i></div>
                                 <span>DOWNLOAD FILE</span></a>
                         </div>
-                    <!-- @endforeach -->
+                    @endforeach
                 @endif
                 </div>
             </div>

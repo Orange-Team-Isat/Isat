@@ -25,113 +25,60 @@
                     <span class="pcoded-mcaret"></span>
                 </a>
             </li>
-            <!-- <li id="pcoded-hasmenu">
-                <a href="{{ url('managenews') }}">
-                    <span class="pcoded-micon"><i class="zmdi zmdi-balance"></i><b>M</b></span>
-                    <span class="pcoded-mtext text_show">จัดการข้อมูลข่าว</span>
-                    <span class="pcoded-mcaret"></span>
-                </a>
-            </li> -->
             <li class="pcoded-hasmenu">
                 <a href="javascript:void(0)">
                     <span class="pcoded-micon"><i class="fa fa-check-square"></i><b>M</b></span>
                     <span class="pcoded-mtext text_show">การจัดการข้อมูลข่าว</span>
                     <span class="pcoded-mcaret"></span>
                 </a>
-                <ul class="pcoded-submenu">
-                    <li class="">
-                        <a href="{{ url('managenews_sub/meeting') }}">
-                            <span class="pcoded-micon"><i class="ti-angle-right"></i></span>
-                            <span class="pcoded-mtext text_show">Meetings Minutes</span>
-                            <span class="pcoded-mcaret"></span>
-                        </a>
-                    </li>
-                    <li class="">
-                        <a href="{{url('managenews_sub/announcement')}}">
-                            <span class="pcoded-micon"><i class="fa fa-check-square"></i></span>
-                            <span class="pcoded-mtext text_show">Announcement & Updates</span>
-                            <span class="pcoded-mcaret"></span>
-                        </a>
-                    </li>
-                    <li class="">
-                        <a href="{{url('managenews_sub/subcommittees')}}">
-                            <span class="pcoded-micon"><i class="fa fa-check-square"></i></span>
-                            <span class="pcoded-mtext text_show">Sub-Committees</span>
-                            <span class="pcoded-mcaret"></span>
-                        </a>
-                    </li>
-                    <li class="">
-                        <a href="{{url('managenews_sub/rules')}}">
-                            <span class="pcoded-micon"><i class="fa fa-check-square"></i></span>
-                            <span class="pcoded-mtext text_show">Rules & Regulations</span>
-                            <span class="pcoded-mcaret"></span>
-                        </a>
-                    </li>
-                    <li class="">
-                        <a href="{{url('managenews_sub/accreditations')}}">
-                            <span class="pcoded-micon"><i class="fa fa-check-square"></i></span>
-                            <span class="pcoded-mtext text_show">Accreditations</span>
-                            <span class="pcoded-mcaret"></span>
-                        </a>
-                    </li>
-                    <li class="">
-                        <a href="{{url('managenews_sub/newsevents')}}">
-                            <span class="pcoded-micon"><i class="fa fa-check-square"></i></span>
-                            <span class="pcoded-mtext text_show">News & Events</span>
-                            <span class="pcoded-mcaret"></span>
-                        </a>
-                    </li>
-                </ul>
-            </li>
-            <!-- <div class="pcoded-navigation-label">จัดการข้อมูลข่าว</div>
-                <ul class="pcoded-item pcoded-left-item">
-                    <li id="pcoded-hasmenu">
-                        <a href="{{ url('managenews/meeting') }}">
-                            <span class="pcoded-micon"><i class="fa fa-upload"></i><b>M</b></span>
-                            <span class="pcoded-mtext text_show">Meetings Minutes</span>
-                            <span class="pcoded-mcaret"></span>
-                        </a>
-                    </li>
-                    <li id="pcoded-hasmenu">
-                        <a href="{{ url('managenews/announcement') }}">
-                            <span class="pcoded-micon"><i class="fa fa-upload"></i><b>M</b></span>
-                            <span class="pcoded-mtext text_show">Announcement & Updates</span>
-                            <span class="pcoded-mcaret"></span>
-                        </a>
-                    </li>
-                    <li id="pcoded-hasmenu">
-                        <a href="{{ url('managenews/subcommittees') }}">
-                            <span class="pcoded-micon"><i class="fa fa-upload"></i><b>M</b></span>
-                            <span class="pcoded-mtext text_show">Sub-Committees</span>
-                            <span class="pcoded-mcaret"></span>
-                        </a>
-                    </li>
-                    <li id="pcoded-hasmenu">
-                        <a href="{{ url('managenews/rules') }}">
-                            <span class="pcoded-micon"><i class="fa fa-upload"></i><b>M</b></span>
-                            <span class="pcoded-mtext text_show">Rules & Regulations</span>
-                            <span class="pcoded-mcaret"></span>
-                        </a>
-                    </li>
-                    <li id="pcoded-hasmenu">
-                        <a href="{{ url('managenews/accreditations') }}">
-                            <span class="pcoded-micon"><i class="fa fa-upload"></i><b>M</b></span>
-                            <span class="pcoded-mtext text_show">Accreditations</span>
-                            <span class="pcoded-mcaret"></span>
-                        </a>
-                    </li>
-                    <li id="pcoded-hasmenu">
-                        <a href="{{ url('managenews/news') }}">
-                            <span class="pcoded-micon"><i class="fa fa-upload"></i><b>M</b></span>
-                            <span class="pcoded-mtext text_show">News & Events</span>
-                            <span class="pcoded-mcaret"></span>
-                        </a>
-                    </li>
-                </ul> -->
-            
+                            <ul class="pcoded-submenu">
+                                <li class="">
+                                    <a href="{{ url('managenews_sub/meeting') }}">
+                                        <span class="pcoded-micon"><i class="ti-angle-right"></i></span>
+                                        <span class="pcoded-mtext text_show">Meetings Minutes</span>
+                                        <span class="pcoded-mcaret"></span>
+                                    </a>
+                                </li>
+                                <li class="">
+                                    <a href="{{url('managenews_sub/announcement')}}">
+                                        <span class="pcoded-micon"><i class="fa fa-check-square"></i></span>
+                                        <span class="pcoded-mtext text_show">Announcement & Updates</span>
+                                        <span class="pcoded-mcaret"></span>
+                                    </a>
+                                </li>
+                                <li class="">
+                                    <a href="{{url('managenews_sub/subcommittees')}}">
+                                        <span class="pcoded-micon"><i class="fa fa-check-square"></i></span>
+                                        <span class="pcoded-mtext text_show">Sub-Committees</span>
+                                        <span class="pcoded-mcaret"></span>
+                                    </a>
+                                </li>
+                                <li class="">
+                                    <a href="{{url('managenews_sub/rules')}}">
+                                        <span class="pcoded-micon"><i class="fa fa-check-square"></i></span>
+                                        <span class="pcoded-mtext text_show">Rules & Regulations</span>
+                                        <span class="pcoded-mcaret"></span>
+                                    </a>
+                                </li>
+                                <li class="">
+                                    <a href="{{url('managenews_sub/accreditations')}}">
+                                        <span class="pcoded-micon"><i class="fa fa-check-square"></i></span>
+                                        <span class="pcoded-mtext text_show">Accreditations</span>
+                                        <span class="pcoded-mcaret"></span>
+                                    </a>
+                                </li>
+                                <li class="">
+                                    <a href="{{url('managenews_sub/newsevents')}}">
+                                        <span class="pcoded-micon"><i class="fa fa-check-square"></i></span>
+                                        <span class="pcoded-mtext text_show">News & Events</span>
+                                        <span class="pcoded-mcaret"></span>
+                                    </a>
+                                </li>
+                            </ul>
+            </li>      
             <li id="pcoded-hasmenu">
                 <a href="{{ url('managegallery') }}">
-                    <span class="pcoded-micon"><i class="fa fa-heartbeat"></i><b>M</b></span>
+                    <span class="pcoded-micon"><i class="fa fa-building"></i><b>M</b></span>
                     <span class="pcoded-mtext text_show">จัดการข้อมูลอัลบั้มภาพ</span>
                     <span class="pcoded-mcaret"></span>
                 </a>
