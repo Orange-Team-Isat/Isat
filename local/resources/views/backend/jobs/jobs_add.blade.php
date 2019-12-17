@@ -34,30 +34,33 @@
                     {{ csrf_field() }}
                     <div class="card-block pt-0">
                         <div class="form-group row">
-                            <label class="col-sm-2 col-form-label text-right">Jobs Name</label>
+                            <label class="col-sm-2 col-form-label text-right">Jobs Name(TH)</label>
                             <div class="col-sm-4">
                                 <input type="text" name="jobs_name_th" class="form-control" placeholder="ชื่องานภาษาไทย" value="{{ (!empty($jobs_list) ? $jobs_list->jobs_name_th: '') }}">
                                 <input type="hidden" required name="jobs_id" value="{{ (!empty($jobs_list) ? $jobs_list->jobs_id : '') }}">
                             </div>
+                            <label class="col-sm-2 col-form-label text-right">Jobs Name(EN)</label>
                             <div class="col-sm-4">
                                 <input type="text" name="jobs_name_en" class="form-control" placeholder="ชื่องานภาษาอังกฤษ" value="{{ (!empty($jobs_list) ? $jobs_list->jobs_name_en: '') }}">
                                 <input type="hidden" required name="jobs_id" value="{{ (!empty($jobs_list) ? $jobs_list->jobs_id : '') }}">
                             </div>
                         </div>
                         <div class="form-group row">
-                            <label class="col-sm-2 col-form-label text-right">Job Description</label>
+                            <label class="col-sm-2 col-form-label text-right">Job Description(TH)</label>
                             <div class="col-sm-4">
                                 <textarea name="jobs_detail_th" id="jobs_detail_th" rows="10" cols="80">{{ (!empty($jobs_list) ? $jobs_list->jobs_detail_th : '') }}</textarea>
                             </div>
+                            <label class="col-sm-2 col-form-label text-right">Job Description(EN)</label>
                             <div class="col-sm-4">
                                 <textarea name="jobs_detail_en" id="jobs_detail_en" rows="10" cols="80">{{ (!empty($jobs_list) ? $jobs_list->jobs_detail_en : '') }}</textarea>
                             </div>
                         </div>
                         <div class="form-group row">
-                            <label class="col-sm-2 col-form-label text-right">Qualifications</label>
+                            <label class="col-sm-2 col-form-label text-right">Qualifications(TH)</label>
                             <div class="col-sm-4">
                                 <textarea name="jobs_qualifications_th" id="jobs_qualifications_th" rows="10" cols="80">{{ (!empty($jobs_list) ? $jobs_list->jobs_qualifications_th  : '') }}</textarea>
                             </div>
+                            <label class="col-sm-2 col-form-label text-right">Qualifications(EN)</label>
                             <div class="col-sm-4">
                                 <textarea name="jobs_qualifications_en" id="jobs_qualifications_en" rows="10" cols="80">{{ (!empty($jobs_list) ? $jobs_list->jobs_qualifications_en  : '') }}</textarea>
                             </div>

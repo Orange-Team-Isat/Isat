@@ -34,11 +34,13 @@
                     {{ csrf_field() }}
                     <div class="card-block pt-0">
                         <div class="form-group row">
-                            <label class="col-sm-2 col-form-label text-right">หัวข้ออัลบั้มภาพ</label>
+                            <label class="col-sm-2 col-form-label text-right">หัวข้ออัลบั้มภาพ(TH)</label>
                             <div class="col-sm-4">
                                 <input type="text" name="gallery_title_th" class="form-control" placeholder="หัวข้ออัลบั้มภาพภาษาไทย" value="{{ (!empty($gallery_list) ? $gallery_list->gallery_title_th: '') }}">
                                 <input type="hidden" required name="gallery_id" value="{{ (!empty($gallery_list) ? $gallery_list->gallery_id : '') }}">
                             </div>
+                            <label class="col-sm-2 col-form-label text-right">หัวข้ออัลบั้มภาพ(EN)</label>
+
                             <div class="col-sm-4">
                                 <input type="text" name="gallery_title_en" class="form-control" placeholder="หัวข้ออัลบั้มภาพภาษาอังกฤษ" value="{{ (!empty($gallery_list) ? $gallery_list->gallery_title_en: '') }}">
                                 <input type="hidden" required name="gallery_id" value="{{ (!empty($gallery_list) ? $gallery_list->gallery_id : '') }}">
@@ -54,10 +56,12 @@
                             </div>
                         </div>
                         <div class="form-group row">
-                            <label class="col-sm-2 col-form-label text-right">รายละเอียด</label>
+                            <label class="col-sm-2 col-form-label text-right">รายละเอียด(TH)</label>
                             <div class="col-sm-4">
                                 <textarea name="gallery_detail_th" id="gallery_detail_th" rows="10" cols="80">{{ (!empty($gallery_list) ? $gallery_list->gallery_detail_th : '') }}</textarea>
                             </div>
+                            <label class="col-sm-2 col-form-label text-right">รายละเอียด(EN)</label>
+
                             <div class="col-sm-4">
                                 <textarea name="gallery_detail_en" id="gallery_detail_en" rows="10" cols="80">{{ (!empty($gallery_list) ? $gallery_list->gallery_detail_en : '') }}</textarea>
                             </div>
