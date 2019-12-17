@@ -62,16 +62,17 @@
                         ?>
                
                  
-                    <div class="headerBlue">{{(Session::get('lang') == 'th' ? $news->news_title_th : $news->news_title_en) }}</div>
+                    <div class="headerBlue">Rules & Regulations Topic</div>
                 </div>
             </div>
+            
                         <div class="row">
                             <div class="col">
                                 <div class="borderBox">
                                     <ul class="rule-download">
                                         
                                         <li>
-                                            <div class="download-topic">Rules & Regulations File Name Rules & Regulations File Name Rules & Regulations File Name</div>
+                                            <div class="download-topic">{{(Session::get('lang') == 'th' ? $news->news_title_th : $news->news_title_en) }}</div>
                                             <div class="download-part">
                                                 <div class="row">
                                         @if(!empty($file))
@@ -85,7 +86,7 @@
                             
                                                     <div class="col-lg-9 col-8">
                                                         <div class="download-info">
-                                                            <p>file info file info file info file info file info file info file info file info file info file info file info file info file info file info file info file info</p>
+                                                            <p><?php echo (Session::get('lang') == 'th' ? $news->news_detail_th : $news->news_detail_en); ?></p>
                                                             <p><span><i class="fas fa-pencil-alt"></i>Post on :</span>{{$date_text}}</p>
                                                         </div>
                                                     </div>

@@ -72,10 +72,11 @@
                             
                         </div>
                         <div class="form-group row">
-                            <label class="col-sm-2 col-form-label text-right">รายละเอียดข่าว</label>
+                            <label class="col-sm-2 col-form-label text-right">รายละเอียดข่าว(TH)</label>
                             <div class="col-sm-4">
                                 <textarea name="news_detail_th" id="news_detail_th" rows="10" cols="80">{{ (!empty($news_list) ? $news_list->news_detail_th : '') }}</textarea>
                             </div>
+                            <label class="col-sm-2 col-form-label text-right">รายละเอียดข่าว(EN)</label>
                             <div class="col-sm-4">
                                 <textarea name="news_detail_en" id="news_detail_en" rows="10" cols="80">{{ (!empty($news_list) ? $news_list->news_detail_en : '') }}</textarea>
                             </div>

@@ -33,7 +33,7 @@
             <div class="card-header card_head_modify">
                 <div class="row">
                     <div class="col-md-8">
-                        <span class="pull-left pt-1" style="font-size: 18px;">ข้อมูลภาพสไลด์</span>
+                        <span class="pull-left pt-1" style="font-size: 18px;">ข้อมูลภาพสไลด์(Banner)</span>
                     </div>
                     
                     <div class="col-md-4">
