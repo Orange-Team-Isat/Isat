@@ -4,7 +4,7 @@
     <link rel="stylesheet" type="text/css" href="{{ asset('bower_components/datatables.net-bs4/css/dataTables.bootstrap4.min.css') }}">
     <link rel="stylesheet" type="text/css" href="{{ asset('assets/pages/data-table/css/buttons.dataTables.min.css') }}">
     <link rel="stylesheet" type="text/css" href="{{ asset('bower_components/datatables.net-responsive-bs4/css/responsive.bootstrap4.min.css') }}">
-    <!-- <script src="{{asset('assets/ckeditor/ckeditor.js')}}"></script> -->
+   
 @endsection
 @section('styles')
   <style>
@@ -61,7 +61,11 @@
                         <div class="form-group row">
                             <label class="col-sm-2 col-form-label text-right">School</label>
                             <div class="col-sm-4">
-                                <input type="texe" name="member_school" class="form-control" placeholder="ชื่อโรงเรียน" value="{{ (!empty($member_list) ? $member_list->member_school : '') }}">
+                            <select class="form-control" name="school_name_th">
+                            <option>select</option>
+                            </select>
+
+                                <!-- <input type="texe" name="member_school" class="form-control" placeholder="ชื่อโรงเรียน" value="{{ (!empty($member_list) ? $member_list->member_school : '') }}"> -->
                             </div>
                         </div>
                         <div class="form-group row">
@@ -94,7 +98,14 @@
                         <div class="form-group row">
                             <label class="col-sm-2 col-form-label text-right">Roles</label>
                             <div class="col-sm-4">
-                            <input type="texe" name="member_roles" class="form-control" placeholder="Roles (1-4)" value="{{ (!empty($memberd_list) ? $member_list->member_roles : '') }}">                            
+                            <!-- <input type="texe" name="member_roles" class="form-control" placeholder="Roles (1-4)" value="{{ (!empty($memberd_list) ? $member_list->member_roles : '') }}">                             -->
+                            <select class="form-control" name="member_roles">
+                                <option {{ (!empty($member_list) && $member_list->member_roles == '1' ? 'SELECTED' : '' ) }} value="1" >1</option>
+                                <option {{ (!empty($member_list) && $member_list->member_roles == '2' ? 'SELECTED' : '' ) }} value="2" >2</option>
+                                <option {{ (!empty($member_list) && $member_list->member_roles == '3' ? 'SELECTED' : '' ) }} value="3" >3</option>
+                                <option {{ (!empty($member_list) && $member_list->member_roles == '4' ? 'SELECTED' : '' ) }} value="4" >4</option>
+                                
+                                </select>
                             </div>
                         </div>
                         <div class="form-group row">
@@ -152,11 +163,7 @@
             }
         }
   </script>
-  <!-- <script>
-                // Replace the <textarea id="editor1"> with a CKEditor
-                // instance, using default configuration.
-                CKEDITOR.replace( 'news_detail' );
-            </script> -->
+  
 @endsection
 
 

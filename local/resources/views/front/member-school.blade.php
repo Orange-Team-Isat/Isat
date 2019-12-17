@@ -12,9 +12,9 @@
                 <div class="col">
                     <h2>Member Schools</h2>
                 </div>
-            </div>
-            
-            <!--------------- S E A R C H - B O X --------------->
+            </div>            
+    
+    <!--------------- S E A R C H - B O X --------------->
             <div class="row">
                 <div class="col">
                     <div class="searchBox">
