@@ -45,21 +45,21 @@
                                     $date_text = $date[2].' '.(Session::get('lang') == 'th' ? $month_th[$date[1]] : $month_en[$date[1]] ).' '.$year;
                                     
                                 }?>
-                         <a class="newsBox side" href="{{ url('news-detail')}}/{{ $_news->news_id }}">
-                             <div class="img-width"><img src="{{{asset('local/public/news').'/'.$_news->news_index}}}"></div>
-                                <div class="newsBox-topic">
-                                    <div class="row">
-                                        <div class="col-4">
-                                        <div class="dateBox greenBG">{{$date[2]}}<span>{{(Session::get('lang') == 'th' ? $month_th[$date[1]] : $month_en[$date[1]] )}}</span></div>
+                                <a class="newsBox side" href="{{ url('news-detail')}}/{{ $_news->news_id }}">
+                                    <div class="img-width"><img src="{{{asset('local/public/news').'/'.$_news->news_index}}}"></div>
+                                        <div class="newsBox-topic">
+                                            <div class="row">
+                                                <div class="col-4">
+                                                <div class="dateBox greenBG">{{$date[2]}}<span>{{(Session::get('lang') == 'th' ? $month_th[$date[1]] : $month_en[$date[1]] )}}</span></div>
+                                            </div>
+                                            <div class="col-8">
+                                                <div class="news-topic">
+                                                <p>{{(Session::get('lang') == 'th' ? $_news->news_title_th : $_news->news_title_en) }}</p>
+                                            </div>
+                                        </div>
                                     </div>
-                                    <div class="col-8">
-                                        <div class="news-topic">
-                                        <p>{{(Session::get('lang') == 'th' ? $_news->news_title_th : $_news->news_title_en) }}</p>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>  
-                    </a>
+                                </div>  
+                            </a>
                         @endforeach
                     @endif 
             </div>

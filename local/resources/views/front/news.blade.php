@@ -83,7 +83,7 @@
             <div class="padding-3col">
                 <div class="row">
 
-                    <?php $news= DB::table('news')->orderBy('news_update','DESC')->where('news_member',1)->limit(6)->get(); 
+                    <?php $news= DB::table('news')->orderBy('news_date','DESC')->where('news_member',1)->limit(6)->get(); 
                                 
                                  $month_th['01'] = 'ม.ค.';
                                  $month_th['02'] = 'ก.พ.';
@@ -175,7 +175,7 @@
             </div>
             <div class="padding-3col">
                 <div class="row">
-                <?php $news= DB::table('news')->orderBy('news_update','DESC')->where('news_member',2)->limit(3)->get(); 
+                <?php $news= DB::table('news')->orderBy('news_date','DESC')->where('news_member',2)->limit(3)->get(); 
                                 
                                 $month_th['01'] = 'ม.ค.';
                                 $month_th['02'] = 'ก.พ.';

@@ -49,10 +49,10 @@ class ManageslideController extends Controller
             </script>';
             // echo public_path('/slide/').$banner->banner_file;
         }
-        //  DB::table('banner')->where('banner_id',$id)->delete();
+          //  DB::table('banner')->where('banner_id',$id)->delete();
         
               
-        // return back();
+          // return back();
     }
    
     public function show($id)

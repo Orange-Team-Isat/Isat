@@ -56,7 +56,6 @@ class ManagememberController extends Controller
     }
     
     public function store_member(Request $request){
-        // dd($request->input(),$request->file());
 
         $values = array(
             'member_fullname'               => $request->input('member_fullname'),
@@ -74,7 +73,6 @@ class ManagememberController extends Controller
             'member_update'                 => date('Y-m-d H-i-s')
         );           
 
-               // dd($request->file(),$values);
 
         DB::table('member')->insert($values);
 
@@ -85,7 +83,6 @@ class ManagememberController extends Controller
     }
 
     public function update_member(Request $request){
-        // dd($request->input(),$request->file());
 
         $values = array(
             'member_fullname'               => $request->input('member_fullname'),

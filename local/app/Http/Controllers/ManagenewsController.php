@@ -105,7 +105,7 @@ class ManagenewsController extends Controller
 
         if(!empty($request->file('news_index'))){
             $file = $request->file('news_index');
-            // foreach ($file as $_file) {
+    
                 $imagename = '';
                 $imagename = date('Y-m-d-H-i-s').rand().'.jpg';
 
@@ -114,7 +114,7 @@ class ManagenewsController extends Controller
                 $thumb_img_origi->save($destinationPath_origi.$imagename);
 
                 $values['news_index'] = $imagename;
-            // }
+         
         }
        if(!empty($request->file('news_file'))){
             $file = $request->file('news_file');
@@ -137,34 +137,32 @@ class ManagenewsController extends Controller
                 $i++;
             }
         }
-        // dd($values);
-
+ 
         DB::table('news')->insert($values);
 
-        if($request->input('news_type') == 1){
-            $menu = 'managenews_sub/meeting';
-        }elseif($request->input('news_type') == 2){
-            $menu = 'managenews_sub/announcement';
-        }elseif($request->input('news_type') == 3){  
-            $menu = 'managenews_sub/subcommittees';
-        }elseif($request->input('news_type') == 4){
-            $menu = 'managenews_sub/rules';
-        }elseif($request->input('news_type') == 5){
-            $menu = 'managenews_sub/accreditations';
-        }elseif($request->input('news_type') == 6){
-            $menu = 'managenews_sub/newsevents';
-        }else{
-            $menu='';
-        }
+            if($request->input('news_type') == 1){
+                $menu = 'managenews_sub/meeting';
+            }elseif($request->input('news_type') == 2){
+                $menu = 'managenews_sub/announcement';
+            }elseif($request->input('news_type') == 3){  
+                $menu = 'managenews_sub/subcommittees';
+            }elseif($request->input('news_type') == 4){
+                $menu = 'managenews_sub/rules';
+            }elseif($request->input('news_type') == 5){
+                $menu = 'managenews_sub/accreditations';
+            }elseif($request->input('news_type') == 6){
+                $menu = 'managenews_sub/newsevents';
+            }else{
+                $menu='';
+            }
 
-        echo '<script>
-                    alert("บันทึกข้อมูลเรียบร้อย");
-                    window.location.href = "'.url($menu).'" ;
-            </script>';
+            echo '<script>
+                        alert("บันทึกข้อมูลเรียบร้อย");
+                        window.location.href = "'.url($menu).'" ;
+                </script>';
     }
 
     public function update_news(Request $request){
-    //    dd($request->file('news_index')->getClientOriginalName());
 
         $values = array(
             'news_title_th'           => $request->input('news_title_th'),
@@ -177,60 +175,60 @@ class ManagenewsController extends Controller
             'news_update'             => date('Y-m-d H-i-s')
         );   
 
-        if(!empty($request->file('news_index'))){
-            $file = $request->file('news_index');
-                
-                    $imagename = '';
-                    $imagename = date('Y-m-d-H-i-s').rand().'.jpg';
+            if(!empty($request->file('news_index'))){
+                $file = $request->file('news_index');
+                    
+                        $imagename = '';
+                        $imagename = date('Y-m-d-H-i-s').rand().'.jpg';
 
-                    $destinationPath_origi = public_path('/news/');            
-                    $thumb_img_origi = Image::make($file->getRealPath());
-                    $thumb_img_origi->save($destinationPath_origi.$imagename);
+                        $destinationPath_origi = public_path('/news/');            
+                        $thumb_img_origi = Image::make($file->getRealPath());
+                        $thumb_img_origi->save($destinationPath_origi.$imagename);
 
-            $values['news_index'] = $imagename;
+                $values['news_index'] = $imagename;
         }
         
         $file_old = DB::table('news')->where('news_id',$request->input('news_id'))->first();
         $file_ref = $file_old->news_ref;
 
-        if(!empty($request->file('news_file'))){
-            $file = $request->file('news_file');
-            $i=0;
-            foreach ($file as $_file) {
-                $ext = $_file->getClientOriginalExtension();
+                if(!empty($request->file('news_file'))){
+                    $file = $request->file('news_file');
+                    $i=0;
+                    foreach ($file as $_file) {
+                        $ext = $_file->getClientOriginalExtension();
 
-                $file_upload = '';
-                $file_upload = date('Y-m-d-H-i-s').rand().'.'.$ext;
-                $destinationPath_origi = public_path('/news_files/');           
-                File::move( $_FILES['news_file']['tmp_name'][$i] , $destinationPath_origi.$file_upload);
+                        $file_upload = '';
+                        $file_upload = date('Y-m-d-H-i-s').rand().'.'.$ext;
+                        $destinationPath_origi = public_path('/news_files/');           
+                        File::move( $_FILES['news_file']['tmp_name'][$i] , $destinationPath_origi.$file_upload);
 
-                $values_file['file_sort']   = $i;
-                $values_file['file_name']   = $file_upload;
-                $values_file['file_ref']    = $file_ref;
-                $values_file['file_create'] = date('Y-m-d H-i-s');
-                $values_file['file_update'] = date('Y-m-d H-i-s');
-                
-                DB::table('news_files')->insert($values_file);
-                $i++;
-            }
+                        $values_file['file_sort']   = $i;
+                        $values_file['file_name']   = $file_upload;
+                        $values_file['file_ref']    = $file_ref;
+                        $values_file['file_create'] = date('Y-m-d H-i-s');
+                        $values_file['file_update'] = date('Y-m-d H-i-s');
+                        
+                        DB::table('news_files')->insert($values_file);
+                        $i++;
+                    }
 
-        }
+                }
 
-        if($request->input('news_type') == 1){
-            $menu = 'managenews_sub/meeting';
-        }elseif($request->input('news_type') == 2){
-            $menu = 'managenews_sub/announcement';
-        }elseif($request->input('news_type') == 3){  
-            $menu = 'managenews_sub/subcommittees';
-        }elseif($request->input('news_type') == 4){
-            $menu = 'managenews_sub/rules';
-        }elseif($request->input('news_type') == 5){
-            $menu = 'managenews_sub/accreditations';
-        }elseif($request->input('news_type') == 6){
-            $menu = 'managenews_sub/newsevents';
-        }else{
-            $menu='';
-        }
+                    if($request->input('news_type') == 1){
+                        $menu = 'managenews_sub/meeting';
+                    }elseif($request->input('news_type') == 2){
+                        $menu = 'managenews_sub/announcement';
+                    }elseif($request->input('news_type') == 3){  
+                        $menu = 'managenews_sub/subcommittees';
+                    }elseif($request->input('news_type') == 4){
+                        $menu = 'managenews_sub/rules';
+                    }elseif($request->input('news_type') == 5){
+                        $menu = 'managenews_sub/accreditations';
+                    }elseif($request->input('news_type') == 6){
+                        $menu = 'managenews_sub/newsevents';
+                    }else{
+                        $menu='';
+                    }
 
         DB::table('news')->where('news_id',$request->input('news_id'))->update($values);
 
