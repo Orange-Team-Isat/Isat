@@ -42,7 +42,6 @@
                                                             <p><?php echo (Session::get('lang') == 'th' ? $_faq->faq_ans_th : $_faq->faq_ans_en)?></p>
                                                         </div>
                                                     </div>
-                                                        
                                             @endforeach
                                         @endif
                                         
