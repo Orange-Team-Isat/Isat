@@ -112,55 +112,55 @@
                 <?php $school= DB::table('memberschool')->orderBy('school_id','DESC')->limit(6)->get(); ?>
                 @if(!empty($school))
                             @foreach($school as $_school)
-                    <div class="headerBlue">{{ (Session::get('lang') == 'th' ? $_school->school_name_th : $_school->school_name_en) }}</div>
-                    <div class="schoolBox">
-                        <div class="row">
-                            <div class="col-lg-3 col-md-3 col-12">
-                                <div class="img-middle">
-                                    <div><img class="img-fluid" src="{{asset('local/public/memberschool').'/'.$_school->school_img}}"></div>
-                                </div>
-                            </div>
-                            <div class="col-lg-9 col-md-9 col-12">
-                                <div class="school-info">
+                                <div class="headerBlue">{{ (Session::get('lang') == 'th' ? $_school->school_name_th : $_school->school_name_en) }}</div>
+                                <div class="schoolBox">
                                     <div class="row">
-                                        <div class="col-lg-3 col-md-4 col-12">Location/Address</div>
-                                        <div class="col-lg-9 col-md-8 col-12"><?php echo (Session::get('lang') == 'th' ? $_school->school_address_th : $_school->school_address_en); ?></div>
-                                    </div>
-                                    <div class="row">
-                                        <div class="col-lg-3 col-md-4 col-12">Year established</div>
-                                        <div class="col-lg-9 col-md-8 col-12"><?php echo ( $_school->school_year ); ?></div>
-                                    </div>
-                                    <div class="row">
-                                        <div class="col-lg-3 col-md-4 col-12">Age range</div>
-                                        <div class="col-lg-9 col-md-8 col-12"><?php echo ( $_school->school_age ); ?></div>
-                                    </div>
-                                    <div class="row">
-                                        <div class="col-lg-3 col-md-4 col-12">Education system</div>
-                                        <div class="col-lg-9 col-md-8 col-12"><?php echo ( $_school->school_edusystem ); ?></div>
-                                    </div>
-                                    <div class="row">
-                                        <div class="col-lg-3 col-md-4 col-12">Accreditation</div>
-                                        <div class="col-lg-9 col-md-8 col-12"><?php echo ( $_school->school_accreditation ); ?></div>
-                                    </div>
-                                    <div class="row">
-                                        <div class="col-lg-3 col-md-4 col-12">Website</div>
-                                        <div class="col-lg-9 col-md-8 col-12">
-                                            <a href="http://<?php echo ( $_school->school_website ); ?>" target="_blank"><?php echo ( $_school->school_website ); ?></a>
+                                        <div class="col-lg-3 col-md-3 col-12">
+                                            <div class="img-middle">
+                                                <div><img class="img-fluid" src="{{asset('local/public/memberschool').'/'.$_school->school_img}}"></div>
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-9 col-md-9 col-12">
+                                            <div class="school-info">
+                                                <div class="row">
+                                                    <div class="col-lg-3 col-md-4 col-12">Location/Address</div>
+                                                    <div class="col-lg-9 col-md-8 col-12"><?php echo (Session::get('lang') == 'th' ? $_school->school_address_th : $_school->school_address_en); ?></div>
+                                                </div>
+                                                <div class="row">
+                                                    <div class="col-lg-3 col-md-4 col-12">Year established</div>
+                                                    <div class="col-lg-9 col-md-8 col-12"><?php echo ( $_school->school_year ); ?></div>
+                                                </div>
+                                                <div class="row">
+                                                    <div class="col-lg-3 col-md-4 col-12">Age range</div>
+                                                    <div class="col-lg-9 col-md-8 col-12"><?php echo ( $_school->school_age ); ?></div>
+                                                </div>
+                                                <div class="row">
+                                                    <div class="col-lg-3 col-md-4 col-12">Education system</div>
+                                                    <div class="col-lg-9 col-md-8 col-12"><?php echo ( $_school->school_edusystem ); ?></div>
+                                                </div>
+                                                <div class="row">
+                                                    <div class="col-lg-3 col-md-4 col-12">Accreditation</div>
+                                                    <div class="col-lg-9 col-md-8 col-12"><?php echo ( $_school->school_accreditation ); ?></div>
+                                                </div>
+                                                <div class="row">
+                                                    <div class="col-lg-3 col-md-4 col-12">Website</div>
+                                                    <div class="col-lg-9 col-md-8 col-12">
+                                                        <a href="http://<?php echo ( $_school->school_website ); ?>" target="_blank"><?php echo ( $_school->school_website ); ?></a>
+                                                    </div>
+                                                </div>
+                                                <div class="row">
+                                                    <div class="col-lg-3 col-md-4 col-12">Phone</div>
+                                                    <div class="col-lg-9 col-md-8 col-12"><?php echo ( $_school->school_phone ); ?></div>
+                                                </div>
+                                                <div class="row">
+                                                    <div class="col-lg-3 col-md-4 col-12">Fax</div>
+                                                    <div class="col-lg-9 col-md-8 col-12"><?php echo ( $_school->school_fax ); ?></div>
+                                                </div>
+                                            </div>
                                         </div>
                                     </div>
-                                    <div class="row">
-                                        <div class="col-lg-3 col-md-4 col-12">Phone</div>
-                                        <div class="col-lg-9 col-md-8 col-12"><?php echo ( $_school->school_phone ); ?></div>
-                                    </div>
-                                    <div class="row">
-                                        <div class="col-lg-3 col-md-4 col-12">Fax</div>
-                                        <div class="col-lg-9 col-md-8 col-12"><?php echo ( $_school->school_fax ); ?></div>
-                                    </div>
                                 </div>
-                            </div>
-                        </div>
-                    </div>
-                    @endforeach
+                            @endforeach
                 @endif
                 </div>
             </div><!-- SCHOOL :: 01 -->

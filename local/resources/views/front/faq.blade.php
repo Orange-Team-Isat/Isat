@@ -26,7 +26,6 @@
                                     <div class="panel panel-default">
                                         <!-- QUESTION :: 01 -->
                                 <?php  $faq= DB::table('faq')->orderBy('faq_id')->get(); ?>
-                                
                                         @if(!empty($faq))
                                                 @foreach($faq as $_faq) 
                                                     <div class="panel-heading" role="tab" id="headingOne">
