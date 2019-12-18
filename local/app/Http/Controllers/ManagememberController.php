@@ -97,8 +97,8 @@ class ManagememberController extends Controller
             'member_roles'                  => $request->input('member_roles'),
             'member_contact'                => $request->input('member_contact'),
             'member_update'                 => date('Y-m-d H-i-s')
-        );           
-
+        );      
+        
         DB::table('member')->where('member_id',$request->input('member_id'))->update($values);
 
         echo '<script>
@@ -106,5 +106,9 @@ class ManagememberController extends Controller
                     window.location.href = "'.url('managemember').'" ;
             </script>';
     }
+    
+        
+    
+
     
 }

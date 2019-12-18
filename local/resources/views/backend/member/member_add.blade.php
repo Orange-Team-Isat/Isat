@@ -59,15 +59,17 @@
                             
                         </div>
                         <div class="form-group row">
-                            <label class="col-sm-2 col-form-label text-right">School</label>
+                        <label class="col-sm-2 col-form-label text-right">School</label>
                             <div class="col-sm-4">
-                            <select class="form-control" name="school_name_th">
-                            <option>select</option>
+                            <select class="form-control" name="member_school">
+                                <option> school</option>
                             </select>
-
-                                <!-- <input type="texe" name="member_school" class="form-control" placeholder="ชื่อโรงเรียน" value="{{ (!empty($member_list) ? $member_list->member_school : '') }}"> -->
+                               <!-- <input type="texe" name="member_school" class="form-control" placeholder="ชื่อโรงเรียน" value="{{ (!empty($member_list) ? $member_list->member_school : '') }}">  -->
                             </div>
                         </div>
+                      
+
+
                         <div class="form-group row">
                             <label class="col-sm-2 col-form-label text-right">Position</label>
                             <div class="col-sm-4">
