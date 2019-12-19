@@ -67,6 +67,7 @@
                                     <td>{{ $value->member_thainame}}</td>
                                     <td>{{ $value->member_display}}</td>
                                     <td>{{ $value->member_contact}}</td>
+                                    <td>{{ $value->member_school}}</td>
                                     <td>
                                         <a href="{{ url('managemember/show/'.$value->member_id) }}"><button class="btn btn-info btn-round btn-mini">edit</button></a>
                                         <a href="{{ url('managemember/del/'.$value->member_id) }}"><button class="btn btn-danger btn-round btn-mini">delete</button></a>

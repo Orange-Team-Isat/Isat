@@ -32,11 +32,11 @@
                                                         <div class="row">
                                                             <div class="col-10">{{ (Session::get('lang') == 'th' ? $_faq->faq_question_th : $_faq->faq_question_en) }}</div>
                                                             <div class="col-2">
-                                                                <a id="quest01" data-toggle="collapse" data-parent="#accordion" href="#collapseOne" aria-expanded="true" aria-controls="collapseOne"></a>
+                                                                <a id="quest01" data-toggle="collapse" data-parent="#accordion" href="#collapseOne{{ $_faq->faq_id }}" aria-expanded="true" aria-controls="collapseOne"></a>
                                                             </div>
                                                         </div>
                                                     </div>
-                                                    <div id="collapseOne" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingOne">
+                                                    <div id="collapseOne{{ $_faq->faq_id }}" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingOne">
                                                         <div class="panel-body">
                                                             <h6>Answer :</h6>
                                                             <p><?php echo (Session::get('lang') == 'th' ? $_faq->faq_ans_th : $_faq->faq_ans_en)?></p>
