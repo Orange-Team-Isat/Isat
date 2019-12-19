@@ -55,7 +55,6 @@
                 <div class="col-lg-3 col-12">     
                     @include('front.inc_latestnews') 
                 </div>
-
             </div>
         </div>
     </div>

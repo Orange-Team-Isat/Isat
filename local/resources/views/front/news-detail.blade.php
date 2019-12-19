@@ -15,7 +15,7 @@
             </div>
 
             <?php $news = DB::table('news')->where('news_id',$news_id)->first(); 
-               $file= DB::table('news_files')->where('file_ref',$news->news_ref)->get(); 
+                  $file= DB::table('news_files')->where('file_ref',$news->news_ref)->get(); 
 
                             $month_th['01'] = 'ม.ค.';
                             $month_th['02'] = 'ก.พ.';

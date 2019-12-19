@@ -232,40 +232,6 @@
                                     </div>  
                                 </a>
                             </div>
-                                    <!-- <div class="col-lg-4 col-md-4 col-12">
-                                        <a class="newsBox" href="{{ url('news-detail')}}">
-                                            <div class="img-width"><img src="{{asset('assets/images/news/news02.jpg')}}"></div>
-                                            <div class="newsBox-topic">
-                                                <div class="row">
-                                                    <div class="col-md-4 col-3">
-                                                        <div class="dateBox skyBG">29<span>NOV</span></div>
-                                                    </div>
-                                                    <div class="col-md-8 col-9">
-                                                        <div class="news-topic">
-                                                            <p>News & Events Topic News & Events Topic News & Events Topic</p>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>  
-                                        </a>
-                                    </div>
-                                    <div class="col-lg-4 col-md-4 col-12">
-                                        <a class="newsBox" href="{{ url('news-detail')}}">
-                                            <div class="img-width"><img src="{{asset('assets/images/news/news02.jpg')}}"></div>
-                                            <div class="newsBox-topic">
-                                                <div class="row">
-                                                    <div class="col-md-4 col-3">
-                                                        <div class="dateBox skyBG">29<span>NOV</span></div>
-                                                    </div>
-                                                    <div class="col-md-8 col-9">
-                                                        <div class="news-topic">
-                                                            <p>News & Events Topic News & Events Topic News & Events Topic</p>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>  
-                                        </a>
-                                    </div> -->
                         @endforeach
                     @endif
                 </div>

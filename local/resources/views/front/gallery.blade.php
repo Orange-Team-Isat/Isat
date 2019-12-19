@@ -58,7 +58,6 @@
                 <div class="row">
                     <div class="col-lg-6 col-md-6 col-12">    
                        <div class="img-width"><img src="{{asset('local/public/gallery').'/'.$gallery->gallery_index}}"></div>
-                        <!-- <div class="img-width"><img src="{{asset('assets/images/gallery/gallery03.jpg')}}"></div> -->
                     </div>
                     <div class="col-lg-6 col-md-6 col-12">
                         <div class="headerBK">
@@ -72,7 +71,6 @@
                             </div>
                             <div class="row">
                                 <div class="col">
-                                    <!-- <p>Eu augue ut lectus arcu bibendum at varius vel. Netus malesuada fames ac turpis egestas integer eget. Volutpat sed cras ornare arcu dui vivamus. Lectus magna fringilla urna porttitor rhoncus dolor. Eu sem integer vitae justo eget magna fermentum. Tempor ori dapibus ultrices in iaculis nunc sed augue lacus. Aliquet eget sit amet tell</p> -->
                                     <p><?php echo (Session::get('lang') == 'th' ? $gallery->gallery_detail_th : $gallery->gallery_detail_en); ?></p>
 
                                 </div>
