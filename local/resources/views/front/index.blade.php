@@ -151,23 +151,6 @@
 
                         @endforeach
                     @endif
-                            <!-- <div class="col-lg-6 col-md-6 col-12">
-                                <a class="newsBox" href="{{ url('news-detail')}}">
-                                    <div class="img-width"><img src="{{asset('assets/images/news/news01.jpg')}}"></div>
-                                    <div class="newsBox-topic">
-                                        <div class="row">
-                                            <div class="col-3">
-                                                <div class="dateBox skyBG">29<span>NOV</span></div>
-                                            </div>
-                                            <div class="col-9">
-                                                <div class="news-topic">
-                                                    <p>News & Events Topic News & Events Topic News & Events Topic</p>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>  
-                                </a>
-                            </div> -->
                         </div>
                     </div>
                 </div>
@@ -238,43 +221,6 @@
                                         </div>
                                     @endforeach
                                 @endif   
-                                <!-- NEWS :: 02
-                                <div class="col-lg-12 col-md-4 col-12">
-                                    <a class="newsBox side" href="{{ url('news-detail')}}">
-                                        <div class="img-width"><img src="{{asset('assets/images/news/news02.jpg')}}"></div>
-                                        <div class="newsBox-topic">
-                                            <div class="row">
-                                                <div class="col-lg-4 col-md-4 col-3">
-                                                    <div class="dateBox skyBG">29<span>NOV</span></div>
-                                                </div>
-                                                <div class="col-lg-8 col-md-8 col-9">
-                                                    <div class="news-topic">
-                                                        <p>News & Events Topic News & Events Topic News & Events Topic</p>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>  
-                                    </a> 
-                                </div> -->
-                            
-                                <!-- NEWS :: 03 -->
-                                <!-- <div class="col-lg-12 col-md-4 col-12">
-                                    <a class="newsBox side" href="{{ url('news-detail')}}">
-                                        <div class="img-width"><img src="{{asset('assets/images/news/news02.jpg')}}"></div>
-                                        <div class="newsBox-topic">
-                                            <div class="row">
-                                                <div class="col-lg-4 col-md-4 col-3">
-                                                    <div class="dateBox skyBG">29<span>NOV</span></div>
-                                                </div>
-                                                <div class="col-lg-8 col-md-8 col-9">
-                                                    <div class="news-topic">
-                                                        <p>News & Events Topic News & Events Topic News & Events Topic</p>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>  
-                                    </a> 
-                                </div> -->
                             </div>
                         </div>
                     </div>
@@ -282,6 +228,7 @@
             </div>     
         </div>
     </div>
+
 
                 <!--------------- G A L L E R Y --------------->
                 <div class="BlueBG">

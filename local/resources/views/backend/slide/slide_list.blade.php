@@ -35,7 +35,6 @@
                     <div class="col-md-8">
                         <span class="pull-left pt-1" style="font-size: 18px;">ข้อมูลภาพสไลด์(Banner)</span>
                     </div>
-                    
                     <div class="col-md-4">
                         <div class="pull-right pt-1">
                             <a href="{{ url('manageslide/create') }}">
@@ -65,16 +64,14 @@
                                     <td><input type="number" class="form-control change_sort" ref="{{ $value->banner_id }}" value="{{ $value->banner_sort }}" style="width:60px;"></td>
                                     <td><img src="<?php echo asset('local/public/slide/').'/'.$value->banner_file; ?>" width="300px" /></td>
                                     <td>
-                                        <a href="{{ url('manageslide/show/'.$value->banner_id) }}"><button class="btn btn-info btn-round btn-mini">edit</button></a>
-                                        <a href="{{ url('manageslide/del/'.$value->banner_id) }}"><button class="btn btn-danger btn-round btn-mini">delete</button></a>
-
+                                            <a href="{{ url('manageslide/show/'.$value->banner_id) }}"><button class="btn btn-info btn-round btn-mini">edit</button></a>
+                                            <a href="{{ url('manageslide/del/'.$value->banner_id) }}"><button class="btn btn-danger btn-round btn-mini">delete</button></a>
                                     </td>
                                 </tr>
                                 <?php $i++; ?>
                             @endforeach
                         </tbody>
                         <tfoot class="thead_txt_center">
-
                             <tr>
                                 <th>No</th>
                                 <th>Sort</th>
