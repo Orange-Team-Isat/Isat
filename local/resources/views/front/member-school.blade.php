@@ -109,7 +109,7 @@
             <div class="row">
                 <div class="col-12">
             
-                <?php $school= DB::table('memberschool')->orderBy('school_id','DESC')->limit(6)->get(); ?>
+                <?php $school= DB::table('memberschool')->orderBy('school_id','ASC')->limit(10)->get(); ?>
                 @if(!empty($school))
                             @foreach($school as $_school)
                                 <div class="headerBlue">{{ (Session::get('lang') == 'th' ? $_school->school_name_th : $_school->school_name_en) }}</div>
