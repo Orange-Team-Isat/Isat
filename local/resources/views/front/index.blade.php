@@ -206,7 +206,7 @@
                                             $month_en['10'] = 'OCT';
                                             $month_en['11'] = 'NOV';
                                             $month_en['12'] = 'DEC';
-                                            ?>
+                                ?>
                                 @if(!empty($news))
                                     @foreach($news as $_news)   
                                 
