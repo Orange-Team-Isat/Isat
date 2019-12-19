@@ -70,20 +70,20 @@
                     <div class="borderBox">
                         <ul class="rule-download">
                             <li>
-                                <div class="download-topic">{{(Session::get('lang') == 'th' ? $_news->news_title_th : $_news->news_title_en) }}</div>
-                                <div class="download-part">
-                                    <div class="row">
-                            <?php $file= DB::table('news_files')->where('file_ref',$_news->news_ref)->get(); ?>
-                            @if(!empty($file))
-                                    @foreach ($file as $_file)
-                                        <div class="col-lg-3 col-4">
-                                            <a class="file-downloadButton" href="<?php echo asset('local/public/news_files/').'/'.$_file->file_name; ?>">
-                                                <i class="fas fa-file-alt"></i>
-                                                <p>Download</p>
-                                            </a>
-                                        </div>
-                                    @endforeach
-                            @endif
+                            <div class="download-topic">{{(Session::get('lang') == 'th' ? $_news->news_title_th : $_news->news_title_en) }}</div>
+                            <div class="download-part">
+                                <div class="row">
+                                    <?php $file= DB::table('news_files')->where('file_ref',$_news->news_ref)->get(); ?>
+                                        @if(!empty($file))
+                                            @foreach ($file as $_file)
+                                                <div class="col-lg-3 col-4">
+                                                    <a class="file-downloadButton" href="<?php echo asset('local/public/news_files/').'/'.$_file->file_name; ?>">
+                                                        <i class="fas fa-file-alt"></i>
+                                                        <p>Download</p>
+                                                    </a>
+                                                </div>
+                                            @endforeach
+                                        @endif
                                         <div class="col-lg-9 col-8">
                                             <div class="download-info">
                                                 <p><?php echo (Session::get('lang') == 'th' ? $_news->news_detail_th : $_news->news_detail_en); ?></p>
@@ -99,114 +99,6 @@
                 @endif
                 </div>
             </div>
-            
-            
-            <!-- RULE :: 02 -->
-            <!-- <div class="row">
-                <div class="col">
-                    <div class="headerBlue">Rules & Regulations Topic</div>
-                </div>
-            </div> -->
-            <!--  <div class="row">
-                <div class="col">
-                    <div class="borderBox">
-                        <ul class="rule-download">
-                            <?php //for($i=0;$i<12;$i++){ ?>
-                            <li>
-                                <div class="download-topic">Rules & Regulations File Name</div>
-                                <div class="download-part">
-                                    <div class="row">
-                                        <div class="col-lg-3 col-4">
-                                            <a class="file-downloadButton" href="#">
-                                                <i class="fas fa-file-alt"></i>
-                                                <p>Download</p>
-                                            </a>
-                                        </div>
-                                        <div class="col-lg-9 col-8">
-                                            <div class="download-info">
-                                                <p>file info file info file info file info file info file info file info file info file info file info file info file info file info file info file info file info</p>
-                                                <p><span><i class="fas fa-pencil-alt"></i>Post on :</span>22 May 2019</p>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </li>
-                            <?php //} ?>
-                        </ul>
-                    </div>
-                </div> -->
-            <!-- </div> --> 
-            
-            <!-- RULE :: 03 -->
-            <!-- <div class="row">
-                <div class="col">
-                    <div class="headerBlue">Rules & Regulations Topic</div>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col">
-                    <div class="borderBox">
-                        <ul class="rule-download">
-                            <?//php for($i=0;$i<7;$i++){ ?>
-                            <li>
-                                <div class="download-topic">Rules & Regulations File Name</div>
-                                <div class="download-part">
-                                    <div class="row">
-                                        <div class="col-lg-3 col-4">
-                                            <a class="file-downloadButton" href="#">
-                                                <i class="fas fa-file-alt"></i>
-                                                <p>Download</p>
-                                            </a>
-                                        </div>
-                                        <div class="col-lg-9 col-8">
-                                            <div class="download-info">
-                                                <p>file info file info file info file info file info file info file info file info file info file info file info file info file info file info file info file info</p>
-                                                <p><span><i class="fas fa-pencil-alt"></i>Post on :</span>22 May 2019</p>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </li>
-                            <?php //} ?>
-                        </ul>
-                    </div>
-                </div>
-            </div> -->
-            
-            <!-- RULE :: 04 -->
-            <!-- <div class="row">
-                <div class="col">
-                    <div class="headerBlue">Rules & Regulations Topic</div>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col">
-                    <div class="borderBox">
-                        <ul class="rule-download">
-                            <li>
-                                <div class="download-topic">Rules & Regulations File Name Rules & Regulations File Name</div>
-                                <div class="download-part">
-                                    <div class="row">
-                                        <div class="col-lg-3 col-4">
-                                            <a class="file-downloadButton" href="#">
-                                                <i class="fas fa-file-alt"></i>
-                                                <p>Download</p>
-                                            </a>
-                                        </div>
-                                        <div class="col-lg-9 col-8">
-                                            <div class="download-info">
-                                                <p>file info file info file info file info file info file info file info file info file info file info file info file info file info file info file info file info</p>
-                                                <p><span><i class="fas fa-pencil-alt"></i>Post on :</span>22 May 2019</p>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </li>
-                        </ul>
-                    </div>
-                </div>
-            </div> -->
-            
             <!-- RULE :: 05-->
              <div class="row">
                 <div class="col">
@@ -253,24 +145,23 @@
                                       $year = $date[0];
                                   }
                                   $date_text = $date[2].' '.(Session::get('lang') == 'th' ? $month_th[$date[1]] : $month_en[$date[1]] ).' '.$year;   
-                              }  
-                          ?>
+                              }  ?>
                        
                             <li>
                                 <div class="download-topic">{{(Session::get('lang') == 'th' ? $_news->news_title_th : $_news->news_title_en) }}</div>
                                  <div class="download-part">
                                     <div class="row">
                                     <?php  $file= DB::table('news_files')->where('file_ref',$_news->news_ref)->get(); ?> 
-                                    @if(!empty($file))
-                                        @foreach($file as $_file)
-                                        <div class="col-lg-3 col-4">
-                                            <a class="file-downloadButton" href="<?php echo asset('local/public/news_files/').'/'.$_file->file_name; ?>">
-                                                <i class="fas fa-file-alt"></i>
-                                                <p>Download</p>
-                                            </a>
-                                        </div>
-                                        @endforeach
-                                    @endif
+                                        @if(!empty($file))
+                                            @foreach($file as $_file)
+                                            <div class="col-lg-3 col-4">
+                                                <a class="file-downloadButton" href="<?php echo asset('local/public/news_files/').'/'.$_file->file_name; ?>">
+                                                    <i class="fas fa-file-alt"></i>
+                                                    <p>Download</p>
+                                                </a>
+                                            </div>
+                                            @endforeach
+                                        @endif
                                         <div class="col-lg-9 col-8">
                                             <div class="download-info">
                                                 <p><?php echo (Session::get('lang') == 'th' ? $_news->news_detail_th : $_news->news_detail_en); ?></p>

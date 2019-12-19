@@ -103,14 +103,11 @@
             </div>
             
             <!--------------- M E M B E R - S C H O O L S --------------->
-            <?php //for($i=0;$i<5;$i++){ ?>
             <!-- SCHOOL :: 01 -->
-
             <div class="row">
                 <div class="col-12">
-            
-                <?php $school= DB::table('memberschool')->orderBy('school_id','ASC')->limit(10)->get(); ?>
-                @if(!empty($school))
+                    <?php $school= DB::table('memberschool')->orderBy('school_id','ASC')->limit(6)->get(); ?>
+                        @if(!empty($school))
                             @foreach($school as $_school)
                                 <div class="headerBlue">{{ (Session::get('lang') == 'th' ? $_school->school_name_th : $_school->school_name_en) }}</div>
                                 <div class="schoolBox">
@@ -161,64 +158,10 @@
                                     </div>
                                 </div>
                             @endforeach
-                @endif
+                        @endif
                 </div>
-            </div><!-- SCHOOL :: 01 -->
-            
-            <!-- SCHOOL :: 02 -->
-            <!-- <div class="row">
-                <div class="col-12">
-                    <div class="headerBlue">Adventist International Mission School</div>
-                    <div class="schoolBox">
-                        <div class="row">
-                            <div class="col-lg-3 col-md-3 col-12">
-                                <div class="img-middle">
-                                    <div><img class="img-fluid" src="{{asset('assets/images/memberschool/logo02.jpg')}}"></div>
-                                </div>
-                            </div>
-                            <div class="col-lg-9 col-md-9 col-12">
-                                <div class="school-info">
-                                    <div class="row">
-                                        <div class="col-lg-3 col-md-4 col-12">Location/Address</div>
-                                        <div class="col-lg-9 col-md-8 col-12">195 Moo 3, Tambol Muaklek, Amphur Muaklek, Saraburi 18180</div>
-                                    </div>
-                                    <div class="row">
-                                        <div class="col-lg-3 col-md-4 col-12">Year established</div>
-                                        <div class="col-lg-9 col-md-8 col-12">2002</div>
-                                    </div>
-                                    <div class="row">
-                                        <div class="col-lg-3 col-md-4 col-12">Age range</div>
-                                        <div class="col-lg-9 col-md-8 col-12">3-18+ years</div>
-                                    </div>
-                                    <div class="row">
-                                        <div class="col-lg-3 col-md-4 col-12">Education system</div>
-                                        <div class="col-lg-9 col-md-8 col-12">American</div>
-                                    </div>
-                                    <div class="row">
-                                        <div class="col-lg-3 col-md-4 col-12">Accreditation</div>
-                                        <div class="col-lg-9 col-md-8 col-12">ONESQA, WASC</div>
-                                    </div>
-                                    <div class="row">
-                                        <div class="col-lg-3 col-md-4 col-12">Website</div>
-                                        <div class="col-lg-9 col-md-8 col-12">
-                                            <a href="https://www.aims.ac.th" target="_blank">www.aims.ac.th</a>
-                                        </div>
-                                    </div>
-                                    <div class="row">
-                                        <div class="col-lg-3 col-md-4 col-12">Phone</div>
-                                        <div class="col-lg-9 col-md-8 col-12">+663 672 0675</div>
-                                    </div>
-                                    <div class="row">
-                                        <div class="col-lg-3 col-md-4 col-12">Fax</div>
-                                        <div class="col-lg-9 col-md-8 col-12">+663 672 0675</div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>SCHOOL :: 02 -->
-            <?php //} ?>
+            </div>
+            <!-- SCHOOL :: 01 -->
             
             <!--------------- P A G E --------------->
             <div class="row">

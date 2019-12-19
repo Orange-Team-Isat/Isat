@@ -18,7 +18,6 @@
                             <h2>Frequently Asked Questions</h2>
                         </div>
                     </div>
-                   
                     <div class="row">
                         <div class="col">
                             <div class="faq-acc">
@@ -64,8 +63,6 @@
     @include('front.inc_topbutton')
     
     @include('front.inc_footer')
-    
-   
     
         <script type="text/javascript">
             // collapse //
